@@ -1,0 +1,164 @@
+@import 'variable.css';
+@import 'base.css';
+@import 'components.css';
+/* =========================================
+   LAYOUTS
+   -----------------------------------------
+   Defines the structure of the page:
+   - Header
+   - Sidebar
+   - Footer
+   - Main content area
+   - Page grid / flex layout
+
+   Controls WHERE things go on the page
+========================================= */
+
+
+/* 
+==========================================
+Header Styles 
+==========================================
+*/
+
+:root {
+    --nav-height: clamp(80px, 10vw, 130px);
+    --logo-height: clamp(140px, 22vw, 300px);
+    --logo-lift: clamp(-95px, -7vw, -45px);
+}
+
+.site-nav {
+    position: sticky;
+    top: 0;
+    height: var(--nav-height);
+    background-color: var(--brand-main-500);
+    overflow: visible;
+    z-index: 100;
+}
+
+.site-nav nav {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.menu {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(1rem, 3vw, 2rem);
+    margin: 0;
+    padding: 0 var(--space-md);
+}
+.nav-left,
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex: 1;
+}
+.nav-left {
+    justify-content: flex-start;
+}
+
+.nav-right {
+    justify-content: flex-end;
+}
+
+.logo-container {
+    position: absolute;
+    left: 50%;
+    top: var(--logo-lift);
+    transform: translateX(-50%);
+    z-index: 200;
+}
+.nav-text{
+    font-family: var(--font-poppins);
+    font-weight: var(--font-weight-lg);
+}
+
+.logo {
+    height: var(--logo-height);
+    width: auto;
+    display: block;
+}
+.top-header-section{
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+    height: 5%;
+    justify-content: space-between;
+    background-color: var(--brand-main-500);
+    padding-left: var(--space-xs);
+    padding-right: var(--space-xs);
+    
+}
+
+/* Index Styles */
+.hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url('/assets/images/hero-img.jpg');
+    background-size: cover;
+    background-position: center;
+
+    filter: brightness(50%);
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1; 
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+}
+.hero-header{
+    font-family: var(--font-poppins);
+    font-weight: var(--font-weight-lg);
+    color: var(--neutral-100);
+}
+
+.hero-description{
+    width: 70%;
+    font-family: var(--font-poppins);
+    font-weight: var(--font-weight-md);
+    color: var(--neutral-100);
+    margin: var(--border-radius-sm);
+}
+
+
+
+
+.hero-form{
+    background-color: var(--neutral-100);
+    border-radius: 5%;
+    width: 30%;
+    margin: var(--space-md);
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: var(--space-sm);
+    z-index: 10;
+}
+
