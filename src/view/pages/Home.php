@@ -1,6 +1,6 @@
 <?php
 $title = "Home | Gulf Coast Contracting";
-require __DIR__ . '/../partials/header.php';
+require __DIR__ . '/../partials/Header.php';
 ?>
 
 
@@ -13,24 +13,41 @@ require __DIR__ . '/../partials/header.php';
     </div>
 
     <form class="hero-form" method="POST" action="/contact-submit">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Your full name..">
+        <h2>Contact Us Today</h2>
 
-        <label for="email">Email</label>
-        <input type="text" id="email" name="email" placeholder="Your email..">
+        <div class="user-box">
+            <input type="text" id="name" name="name" required>
+            <label for="name">Name</label>
+        </div>
 
-        <label for="work_type">Type of Project</label>
-        <select id="work_type" name="work_type">
-            <option value="commercial roofing services">Commercial Roofing Services</option>
-            <option value="residential roofing services">Residental Roofing Services</option>
-            <option value="specialized roofing services">Specialized Roofing Services</option>
-        </select>
+        <div class="user-box">
+            <input type="email" id="email" name="email" required>
+            <label for="email">Email</label>
+        </div>
+
+        <div class="user-box">
+            <select id="work_type" name="work_type" required>
+                <option value="" disabled selected></option>
+                <option value="commercial roofing services">Commercial Roofing Services</option>
+                <option value="residential roofing services">Residential Roofing Services</option>
+                <option value="specialized roofing services">Specialized Roofing Services</option>
+            </select>
+            <label for="work_type">Service Needed</label>
+        </div>
+
+        <button class="quote-submit-btn" type="submit">
+            <span class="btn-text">
+                Get Free Estimate
+            </span>
+
+            <i class="btn-icon fa-solid fa-spinner"></i>
+        </button>
 
 
-        <button type="submit" value="Submit">Submit</button>
+
     </form>
 </section>
 
 
 
-<?php require __DIR__ . '/../partials/footer.php'; ?>
+<?php require __DIR__ . '/../partials/Footer.php'; ?>

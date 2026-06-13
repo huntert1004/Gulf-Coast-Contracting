@@ -2,7 +2,7 @@ h1,
 h2,
 h3 {
     line-height: 1.2;
-    margin-bottom: 1.5rem;
+
     font-weight: 700;
 }
 a{
@@ -29,4 +29,7 @@ ul {
 }
 li{
     list-style: none;
+}
+label{
+    font-family: var(--font-poppins);
 }

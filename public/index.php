@@ -2,12 +2,14 @@
 require_once __DIR__ . '/../src/controller/HomeController.php';
 require_once __DIR__ . '/../src/controller/UserController.php';
 require_once __DIR__ . '/../src/controller/ContactController.php';
+require_once __DIR__ . '/../src/controller/QuoteController.php';
 
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 $homeController = new HomeController();
 $userController = new UserController();
 $contactController = new ContactController();
+$quoteController = new QuoteController();
 
 if ($uri === '/') {
     $homeController->index();
@@ -19,7 +21,11 @@ if ($uri === '/') {
     $userController->logout();
 } elseif ($uri === "/contact-submit") {
     $contactController->submit();
-} else {
+} elseif ($uri === '/quote-submit') {
+    $quoteController->submit();
+} 
+
+else {
     http_response_code(404);
     echo "404 Not Found";
 }

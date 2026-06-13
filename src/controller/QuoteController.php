@@ -1,7 +1,7 @@
 <?php
 
 
-require_once __DIR__ . '/../src/model/Quote.php';
+require_once __DIR__ . '/../model/Quote.php';
 
 class QuoteController
 {

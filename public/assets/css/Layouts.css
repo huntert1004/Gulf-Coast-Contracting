@@ -1,6 +1,6 @@
-@import 'variable.css';
-@import 'base.css';
-@import 'components.css';
+@import 'Variable.css';
+@import 'Base.css';
+@import 'Components.css';
 /* =========================================
    LAYOUTS
    -----------------------------------------
@@ -51,6 +51,7 @@ Header Styles
     margin: 0;
     padding: 0 var(--space-md);
 }
+
 .nav-left,
 .nav-right {
     display: flex;
@@ -58,6 +59,7 @@ Header Styles
     gap: 2rem;
     flex: 1;
 }
+
 .nav-left {
     justify-content: flex-start;
 }
@@ -73,7 +75,8 @@ Header Styles
     transform: translateX(-50%);
     z-index: 200;
 }
-.nav-text{
+
+.nav-text {
     font-family: var(--font-poppins);
     font-weight: var(--font-weight-lg);
 }
@@ -83,7 +86,8 @@ Header Styles
     width: auto;
     display: block;
 }
-.top-header-section{
+
+.top-header-section {
     display: flex;
     flex-direction: row;
     position: sticky;
@@ -92,7 +96,7 @@ Header Styles
     background-color: var(--brand-main-500);
     padding-left: var(--space-xs);
     padding-right: var(--space-xs);
-    
+
 }
 
 /* Index Styles */
@@ -121,7 +125,7 @@ Header Styles
 
 .hero-content {
     position: relative;
-    z-index: 1; 
+    z-index: 1;
     min-height: 70vh;
     display: flex;
     justify-content: center;
@@ -130,13 +134,14 @@ Header Styles
     text-align: center;
     color: white;
 }
-.hero-header{
+
+.hero-header {
     font-family: var(--font-poppins);
     font-weight: var(--font-weight-lg);
     color: var(--neutral-100);
 }
 
-.hero-description{
+.hero-description {
     width: 70%;
     font-family: var(--font-poppins);
     font-weight: var(--font-weight-md);
@@ -144,21 +149,137 @@ Header Styles
     margin: var(--border-radius-sm);
 }
 
+/* Hero Form Styles */
 
 
-
-.hero-form{
+.hero-form {
     background-color: var(--neutral-100);
-    border-radius: 5%;
+    border-radius: 20px;
     width: 30%;
-    margin: var(--space-md);
     min-height: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
+    margin: var(--space-md);
     padding: var(--space-sm);
     z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
+.hero-form h2{
+    font-family: var(--font-poppins);
+    text-align: center;
+}
+
+.hero-form .user-box {
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.hero-form .user-box input,
+.hero-form .user-box select {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+
+    color: var(--brand-main-500);
+    border: none;
+    border-bottom: 1px solid var(--brand-main-500);
+    outline: none;
+    background: transparent;
+}
+
+.hero-form .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--brand-main-500);
+
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+.hero-form .user-box input:focus ~ label,
+.hero-form .user-box input:valid ~ label,
+.hero-form .user-box select:focus ~ label,
+.hero-form .user-box select:valid ~ label {
+    top: -22px;
+    font-size: 12px;
+    color: var(--supporting-blue-600);
+    
+}
+
+
+
+
+
+.quote-submit-btn {
+    min-width: 190px;
+    height: 52px;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(
+        135deg,
+        var(--supporting-blue-500),
+        var(--supporting-blue-700)
+    );
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 0.3s ease;
+}
+
+.btn-icon {
+    display: none;
+    font-size: 1.4rem;
+}
+
+.quote-submit-btn.is-loading,
+.quote-submit-btn.is-success,
+.quote-submit-btn.is-error {
+    min-width: 52px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+}
+
+.quote-submit-btn.is-loading .btn-text,
+.quote-submit-btn.is-success .btn-text,
+.quote-submit-btn.is-error .btn-text {
+    display: none;
+}
+
+.quote-submit-btn.is-loading .btn-icon,
+.quote-submit-btn.is-success .btn-icon,
+.quote-submit-btn.is-error .btn-icon {
+    display: block;
+}
+
+.quote-submit-btn.is-loading .fa-spinner {
+    animation: spin 0.8s linear infinite;
+}
+
+.quote-submit-btn.is-success {
+    background: var(--supporting-green-500);
+}
+
+.quote-submit-btn.is-error {
+    background: var(--supporting-red-500);
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

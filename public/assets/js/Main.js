@@ -1,2 +1,2 @@
-import './nav.js';
-import './hero-form.js';
+import './Nav.js';
+import './HeroForm.js';
