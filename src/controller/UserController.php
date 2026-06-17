@@ -142,6 +142,6 @@ class UserController
 
     public function showLogin()
     {
-        require __DIR__ . '/../views/login.php';
+        require __DIR__ . '/../view/pages/login.php';
     }
 }
