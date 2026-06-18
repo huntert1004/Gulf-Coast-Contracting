@@ -149,218 +149,156 @@ Header Styles
     margin: var(--border-radius-sm);
 }
 
-/* Hero Form Styles */
 
+/* What we Offer Section */
 
-.hero-form {
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
-    width: 30%;
-    min-height: 400px;
-    margin: var(--space-md);
-    padding: var(--space-sm);
-    z-index: 10;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.hero-form h2{
-    font-family: var(--font-poppins);
+.offer-wrapper {
     text-align: center;
-    color: var(--neutral-100);
+    padding: var(--space-xl);
+    background-color: #f8f7f5;
 }
 
-.hero-form .user-box {
-    position: relative;
-    width: 100%;
-    margin-bottom: 30px;
+.offer-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 2rem;
+
+    margin-top: 2rem;
 }
 
-.hero-form .user-box input,
-.hero-form .user-box select {
-    width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
+.offer-card {
+    background: white;
 
-    color: var(--brand-main-500);
-    border: none;
-    border-bottom: 1px solid var(--brand-main-500);
-    outline: none;
-    background: transparent;
-}
+    border-radius: 16px;
 
-.hero-form .user-box label {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    padding: 10px 0;
-    font-size: 16px;
-    color: var(--brand-main-500);
-
-    pointer-events: none;
-    transition: 0.3s ease;
-}
-
-.hero-form .user-box input:focus ~ label,
-.hero-form .user-box input:valid ~ label,
-.hero-form .user-box select:focus ~ label,
-.hero-form .user-box select:valid ~ label {
-    top: -22px;
-    font-size: 12px;
-    color: var(--supporting-blue-600);
-    
-}
-
-
-
-
-
-.quote-submit-btn {
-    min-width: 190px;
-    height: 52px;
-    border: none;
-    border-radius: 999px;
-    background: linear-gradient(
-        135deg,
-        var(--supporting-blue-500),
-        var(--supporting-blue-700)
-    );
-    color: white;
-    font-weight: 700;
-    cursor: pointer;
     overflow: hidden;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, .08);
 
-    transition: all 0.3s ease;
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    cursor: pointer;
 }
 
-.btn-icon {
-    display: none;
-    font-size: 1.4rem;
+.offer-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 16px 30px rgba(0, 0, 0, .15);
 }
 
-.quote-submit-btn.is-loading,
-.quote-submit-btn.is-success,
-.quote-submit-btn.is-error {
-    min-width: 52px;
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-}
+.offer-image {
+    width: 100%;
+    height: 220px;
 
-.quote-submit-btn.is-loading .btn-text,
-.quote-submit-btn.is-success .btn-text,
-.quote-submit-btn.is-error .btn-text {
-    display: none;
-}
+    object-fit: cover;
 
-.quote-submit-btn.is-loading .btn-icon,
-.quote-submit-btn.is-success .btn-icon,
-.quote-submit-btn.is-error .btn-icon {
     display: block;
 }
 
-.quote-submit-btn.is-loading .fa-spinner {
-    animation: spin 0.8s linear infinite;
+.offer-card h2 {
+    padding: 1.25rem;
+
+    color: var(--brand-main-500);
+
+    font-family: var(--font-poppins);
 }
 
-.quote-submit-btn.is-success {
-    background: var(--supporting-green-500);
+/* Fails Early */
+
+.fails-early {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: var(--space-xxl);
+    padding: var(--space-xxl) clamp(2rem, 5vw, 8rem);
+    background: var(--neutral-200);
 }
 
-.quote-submit-btn.is-error {
-    background: var(--supporting-red-500);
+.left-text {
+    max-width: 62rem;
 }
 
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
+.left-text h3 {
+    margin-bottom: var(--space-sm);
+    font-size: var(--text-md);
+    color: var(--supporting-green-500);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.left-text h1 {
+    margin-bottom: var(--space-md);
+    font-size: clamp(3.2rem, 5vw, var(--text-xxl));
+    color: var(--brand-main-500);
+}
+
+.left-text p {
+    max-width: 58rem;
+    font-size: var(--text-base);
+    line-height: 1.8;
+    color: var(--neutral-800);
+}
+
+.right-image {
+    position: relative;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.fails-image {
+    display: block;
+    width: 100%;
+    height: clamp(32rem, 45vw, 52rem);
+    object-fit: cover;
+}
+
+.right-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(24, 49, 79, 0.1),
+        rgba(51, 115, 87, 0.18)
+    );
+    pointer-events: none;
+}
+
+/* Tablet / Mobile */
+@media (max-width: 900px) {
+    .fails-early {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    .left-text {
+        max-width: 100%;
+    }
+
+    .fails-image {
+        height: clamp(28rem, 60vw, 42rem);
     }
 }
 
+/* Small Mobile */
+@media (max-width: 500px) {
+    .fails-early {
+        padding: var(--space-xl) var(--space-md);
+    }
 
-/* Login Form Styles */
+    .left-text h1 {
+        font-size: 3.2rem;
+    }
 
-
-.auth-page {
-    min-height: 100vh;
-    background: #f4f6f9;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.auth-card {
-    width: 360px;
-    padding: 2rem;
-
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-.auth-card h1 {
-    text-align: center;
-    margin-bottom: 1.5rem;
-}
-
-.form-group {
-    margin-bottom: 1rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.4rem;
-    font-weight: 600;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 0.75rem;
-
-    border: 1px solid #ccc;
-    border-radius: 6px;
-}
-
-.auth-card button {
-    width: 100%;
-    padding: 0.85rem;
-
-    border: none;
-    border-radius: 6px;
-
-    background: #2563eb;
-    color: white;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.auth-card button:hover {
-    background: #1d4ed8;
-}
-
-.auth-link {
-    margin-top: 1rem;
-    text-align: center;
-}
-
-/* Test Login Simple dashboard success style */
-
-.flash-success {
-    background: #d1fae5;
-    color: #065f46;
-
-    padding: 1rem;
-    margin-bottom: 1rem;
-
-    border: 1px solid #10b981;
-    border-radius: 8px;
+    .left-text h3 {
+        font-size: var(--text-sm);
+    }
 }

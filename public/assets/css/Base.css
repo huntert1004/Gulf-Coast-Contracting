@@ -1,25 +1,44 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: var(--font-poppins);
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--brand-main-800);
+}
+
 h1,
 h2,
 h3 {
     line-height: 1.2;
+    font-weight: var(--font-weight-lg);
+    color: var(--brand-main-500);
+}
 
-    font-weight: 700;
+h1 {
+    font-size: var(--text-xxl);
+}
+
+h2 {
+    font-size: var(--text-xl);
+}
+
+h3 {
+    font-size: var(--text-lg);
+}
+
+p {
+    font-size: var(--text-base);
+    line-height: 1.7;
+    color: var(--neutral-100);
 }
 a{
     text-decoration: none;
     color: var(--neutral-100);
 }
-h1 {
-    font-size: var(--text-xl);
-    color: var(--brand-purple);
-}
 
-h2 {
-    font-size: var(--text-lg);
-}
-p {
-    color: var(--neutral-100);
-}
 ul {
     padding-inline-start: unset;
 }

@@ -2,6 +2,7 @@
 
 
 require_once __DIR__ . '/../model/User.php';
+require_once __DIR__ . '/../validation/UserValidator.php';
 
 class UserController
 {
@@ -11,6 +12,21 @@ class UserController
             if (empty($_POST['name']) || empty($_POST['username']) || empty($_POST['password'])) { //Need to add mor valiation here work on that later
                 $error = "All fields are required.";
                 return;
+            }
+
+            $validator = new UserValidator();
+
+            $errors = $validator->validate($_POST);
+
+            if (!empty($errors)) {
+                http_response_code(400);
+
+                echo json_encode([
+                    'success' => false,
+                    'errors' => $errors
+                ]);
+
+                exit;
             }
             $user = new User();
 
@@ -24,7 +40,6 @@ class UserController
 
             header("Location: /dashboard");
             exit;
-            
         }
     }
     public function auth()
@@ -32,6 +47,21 @@ class UserController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $username = trim($_POST['username']);
             $password = $_POST['password'];
+
+            $validator = new UserValidator();
+
+            $errors = $validator->validate($_POST);
+
+            if (!empty($errors)) {
+                http_response_code(400);
+
+                echo json_encode([
+                    'success' => false,
+                    'errors' => $errors
+                ]);
+
+                exit;
+            }
 
             $userModel = new User();
             $user = $userModel->findByUsername($username);

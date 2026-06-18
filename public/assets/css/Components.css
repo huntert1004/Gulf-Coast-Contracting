@@ -1,3 +1,16 @@
+/* =========================================
+   COMPONENTS
+   -----------------------------------------
+   Reusable UI elements used throughout the app:
+   - Buttons
+   - Cards
+   - Forms
+   - Modals
+   - Alerts
+
+   Small, reusable building blocks
+========================================= */
+
 /* Header Text Animation */
 .nav-text-animation{
   margin:0;
@@ -19,3 +32,207 @@
 .nav-text-animation:hover:before{
   width:100%;
 }
+
+/* Hero Form Styles */
+
+
+.hero-form {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    width: 30%;
+    min-height: 400px;
+    margin: var(--space-md);
+    padding: var(--space-sm);
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-form h2{
+    font-family: var(--font-poppins);
+    text-align: center;
+    color: var(--neutral-100);
+}
+
+.hero-form .user-box {
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.hero-form .user-box input,
+.hero-form .user-box select {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+
+    color: var(--brand-main-500);
+    border: none;
+    border-bottom: 1px solid var(--brand-main-500);
+    outline: none;
+    background: transparent;
+}
+
+.hero-form .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--brand-main-500);
+
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+.hero-form .user-box input:focus ~ label,
+.hero-form .user-box input:valid ~ label,
+.hero-form .user-box select:focus ~ label,
+.hero-form .user-box select:valid ~ label {
+    top: -22px;
+    font-size: 12px;
+    color: var(--supporting-blue-600);
+    
+}
+
+
+
+
+
+.quote-submit-btn {
+    min-width: 190px;
+    height: 52px;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(
+        135deg,
+        var(--supporting-blue-500),
+        var(--supporting-blue-700)
+    );
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 0.3s ease;
+}
+
+.btn-icon {
+    display: none;
+    font-size: 1.4rem;
+}
+
+.quote-submit-btn.is-loading,
+.quote-submit-btn.is-success,
+.quote-submit-btn.is-error {
+    min-width: 52px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+}
+
+.quote-submit-btn.is-loading .btn-text,
+.quote-submit-btn.is-success .btn-text,
+.quote-submit-btn.is-error .btn-text {
+    display: none;
+}
+
+.quote-submit-btn.is-loading .btn-icon,
+.quote-submit-btn.is-success .btn-icon,
+.quote-submit-btn.is-error .btn-icon {
+    display: block;
+}
+
+.quote-submit-btn.is-loading .fa-spinner {
+    animation: spin 0.8s linear infinite;
+}
+
+.quote-submit-btn.is-success {
+    background: var(--supporting-green-500);
+}
+
+.quote-submit-btn.is-error {
+    background: var(--supporting-red-500);
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Login Form Styles */
+
+
+.auth-page {
+    min-height: 100vh;
+    background: #f4f6f9;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-card {
+    width: 360px;
+    padding: 2rem;
+
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.auth-card h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.auth-card button {
+    width: 100%;
+    padding: 0.85rem;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #2563eb;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.auth-card button:hover {
+    background: #1d4ed8;
+}
+
+.auth-link {
+    margin-top: 1rem;
+    text-align: center;
+}
+
