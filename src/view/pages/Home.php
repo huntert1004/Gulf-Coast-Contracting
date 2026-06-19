@@ -147,6 +147,46 @@ require __DIR__ . '/../partials/Header.php';
 
 </section>
 
+<section class="faq-section">
+    <h3>Frequently Asked Questions</h3>
+    <h2>What SWFL Homeowners Usually Ask Before Moving Forward</h2>
+    <div class="faq-card">
+        <div class="plus"></div>
+        <p>How do I know if I actually need a new roof?</p>
+        <p>Not every aging roof needs immediate replacement. We inspect the condition, flashing, ventilation, shingles, underlayment, and deck before recommending repair or replacement.</p>
+    </div>
+
+    <div class="faq-card">
+        <div class="plus"></div>
+        <p>Do you offer free inspections and estimates?</p>
+        <p>Yes. We provide free roof inspections and written estimates so you understand the condition of your roof, the recommended work, and the expected cost before moving forward.</p>
+    </div>
+
+    <div class="faq-card">
+        <div class="plus"></div>
+        <p>Can you help with storm damage?</p>
+        <p>Yes. We inspect storm damage, document problem areas, repair active leaks, and help homeowners understand what needs to be fixed after heavy wind, rain, or hurricane conditions.</p>
+    </div>
+
+    <div class="faq-card">
+        <div class="plus"></div>
+        <p>How long does a roof replacement usually take?</p>
+        <p>Most residential roof replacements can be completed in a few days, depending on roof size, material, weather, and any damaged decking that needs to be replaced.</p>
+    </div>
+
+    <div class="faq-card">
+        <div class="plus"></div>
+        <p>What types of roofing do you work with?</p>
+        <p>We work with shingle, metal, tile, flat, and specialty roofing systems for both residential and commercial properties throughout Southwest Florida.</p>
+    </div>
+
+    <div class="faq-card">
+        <div class="plus"></div>
+        <p>Do you offer roof repairs, or only full replacements?</p>
+        <p>We offer both. If your roof can be repaired safely and effectively, we’ll recommend the repair instead of pushing a full replacement you may not need yet.</p>
+    </div>
+</section>
+
 
 
 
