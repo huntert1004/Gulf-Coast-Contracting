@@ -33,56 +33,69 @@
   width:100%;
 }
 
-/* Hero Form Styles */
 
+
+/* ------------------------------------------
+   Hero Form
+------------------------------------------ */
 
 .hero-form {
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
-    width: 30%;
-    min-height: 400px;
-    margin: var(--space-md);
-    padding: var(--space-sm);
-    z-index: 10;
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 42rem;
+    justify-self: end;
+
+    padding: var(--space-xl);
+    border-radius: var(--border-radius-lg);
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: var(--shadow-lg);
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    gap: var(--space-md);
 }
 
-.hero-form h2{
-    font-family: var(--font-poppins);
+.hero-form h2 {
+    margin-bottom: var(--space-md);
     text-align: center;
-    color: var(--neutral-100);
+    color: var(--brand-main-500);
+    font-family: var(--font-poppins);
+    font-size: var(--text-lg);
 }
 
 .hero-form .user-box {
     position: relative;
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: var(--space-md);
 }
 
 .hero-form .user-box input,
 .hero-form .user-box select {
     width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
+    padding: 1.2rem 0;
+    font-size: var(--text-base);
+    font-family: var(--font-poppins);
 
     color: var(--brand-main-500);
     border: none;
-    border-bottom: 1px solid var(--brand-main-500);
+    border-bottom: 2px solid var(--brand-main-300);
     outline: none;
     background: transparent;
 }
 
+.hero-form .user-box input:focus,
+.hero-form .user-box select:focus {
+    border-bottom-color: var(--supporting-blue-600);
+}
+
 .hero-form .user-box label {
     position: absolute;
-    top: 0;
+    top: 1.2rem;
     left: 0;
 
-    padding: 10px 0;
-    font-size: 16px;
+    font-size: var(--text-base);
     color: var(--brand-main-500);
 
     pointer-events: none;
@@ -93,28 +106,32 @@
 .hero-form .user-box input:valid ~ label,
 .hero-form .user-box select:focus ~ label,
 .hero-form .user-box select:valid ~ label {
-    top: -22px;
-    font-size: 12px;
-    color: var(--supporting-blue-600);
-    
+    top: -1.4rem;
+    font-size: var(--text-xs);
+    color: var(--supporting-blue-700);
 }
 
-
-
-
+/* ------------------------------------------
+   Button
+------------------------------------------ */
 
 .quote-submit-btn {
-    min-width: 190px;
-    height: 52px;
+    align-self: center;
+
+    min-width: 19rem;
+    height: 5.2rem;
     border: none;
     border-radius: 999px;
+
     background: linear-gradient(
         135deg,
-        var(--supporting-blue-500),
-        var(--supporting-blue-700)
+        var(--supporting-green-500),
+        var(--supporting-green-700)
     );
-    color: white;
-    font-weight: 700;
+
+    color: var(--neutral-100);
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-lg);
     cursor: pointer;
     overflow: hidden;
 
@@ -125,17 +142,22 @@
     transition: all 0.3s ease;
 }
 
+.quote-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
 .btn-icon {
     display: none;
-    font-size: 1.4rem;
+    font-size: var(--text-md);
 }
 
 .quote-submit-btn.is-loading,
 .quote-submit-btn.is-success,
 .quote-submit-btn.is-error {
-    min-width: 52px;
-    width: 52px;
-    height: 52px;
+    min-width: 5.2rem;
+    width: 5.2rem;
+    height: 5.2rem;
     border-radius: 50%;
 }
 
@@ -169,6 +191,66 @@
     }
 }
 
+/* ------------------------------------------
+   Responsive
+------------------------------------------ */
+
+@media (max-width: 950px) {
+    .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: var(--space-xxl) var(--space-md);
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-form {
+        justify-self: center;
+        max-width: 50rem;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 550px) {
+    .hero {
+        padding: var(--space-xl) var(--space-sm);
+        gap: var(--space-xl);
+    }
+
+    .hero-header {
+        font-size: 4rem;
+    }
+
+    .hero-description {
+        font-size: var(--text-sm);
+    }
+
+    .hero-form {
+        padding: var(--space-lg);
+        border-radius: var(--border-radius-md);
+    }
+
+    .hero-form h2 {
+        font-size: var(--text-md);
+    }
+
+    .quote-submit-btn {
+        width: 100%;
+    }
+
+    .quote-submit-btn.is-loading,
+    .quote-submit-btn.is-success,
+    .quote-submit-btn.is-error {
+        width: 5.2rem;
+    }
+}
 
 /* Login Form Styles */
 
