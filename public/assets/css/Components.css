@@ -11,28 +11,6 @@
    Small, reusable building blocks
 ========================================= */
 
-/* Header Text Animation */
-.nav-text-animation{
-  margin:0;
-  padding:0;
-  text-transform:uppercase;
-  position:relative;
-
-}
-[data-foo]::before{
-  content: attr(data-foo) " ";
-  position:absolute;
-  color:var(--neutral-400);
-  top:-2;
-  left:0;
-  width:0%;
-  overflow:hidden;
-  transition:all 0.5s;
-}
-.nav-text-animation:hover:before{
-  width:100%;
-}
-
 
 
 /* ------------------------------------------

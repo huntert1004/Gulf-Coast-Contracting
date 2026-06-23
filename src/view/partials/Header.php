@@ -18,9 +18,9 @@
         <nav>
             <ul class="menu">
                 <div class="nav-left">
-                    <li><a href="/" class="nav-text-animation nav-text" data-foo="Home">Home</a></li>
-                    <li><a href="/services" class="nav-text-animation nav-text" data-foo="Services">Services</a></li>
-                    <li><a href="/projects" class="nav-text-animation nav-text" data-foo="Projects">Projects</a></li>
+                    <li><a href="/" class="nav-text">Home</a></li>
+                    <li><a href="/services" class="nav-text">Services</a></li>
+                    <li><a href="/projects" class="nav-text">Projects</a></li>
                 </div>
                 <li class="logo-container">
                     <a href="/">
@@ -31,13 +31,13 @@
                     </a>
                 </li>
                 <div class="nav-right">
-                    <li><a href="/contact" class="nav-text-animation nav-text" data-foo="Contact">Contact</a></li>
+                    <li><a href="/contact" class="nav-text">Contact</a></li>
 
                     <?php if (!empty($_SESSION['logged_in'])): ?>
-                        <li><a href="/dashboard" class="nav-text-animation nav-text" data-foo="Dashboard">Dashboard</a></li>
-                        <li><a href="/logout" class="nav-text-animation nav-text" data-foo="Logout">Logout</a></li>
+                        <li><a href="/dashboard" class="nav-text">Dashboard</a></li>
+                        <li><a href="/logout" class="nav-text">Logout</a></li>
                     <?php else: ?>
-                        <li><a href="/login" class="nav-text-animation nav-text" data-foo="Login">Login</a></li>
+                        <li><a href="/login" class="nav-text">Login</a></li>
                     <?php endif; ?>
                 </div>
             </ul>
