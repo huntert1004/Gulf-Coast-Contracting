@@ -19,7 +19,16 @@
             <ul class="menu">
                 <div class="nav-left">
                     <li><a href="/" class="nav-text">Home</a></li>
-                    <li><a href="/services" class="nav-text">Services</a></li>
+                    <li class="nav-item has-dropdown">
+                        <a href="/services" class="nav-text">Services</a>
+
+                        <ul class="dropdown-menu">
+                            <li><a href="/services/residential-roofing">Residential Roofing</a></li>
+                            <li><a href="/services/commercial-roofing">Commercial Roofing</a></li>
+                            <li><a href="/services/specialized-roofing">Specialized Roofing</a></li>
+                            <li><a href="/services/roof-repairs">Roof Repairs</a></li>
+                        </ul>
+                    </li>
                     <li><a href="/projects" class="nav-text">Projects</a></li>
                 </div>
                 <li class="logo-container">

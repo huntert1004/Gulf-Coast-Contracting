@@ -32,7 +32,7 @@
     height: var(--nav-height);
     background-color: var(--brand-main-500);
     overflow: visible;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .site-nav nav {
@@ -55,7 +55,7 @@
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: clamp(1rem, 2vw, 2rem);
     flex: 1;
 }
 
@@ -67,6 +67,66 @@
     justify-content: flex-end;
 }
 
+.nav-item {
+    position: relative;
+}
+
+.nav-text {
+    font-family: var(--font-poppins);
+    font-weight: var(--font-weight-lg);
+    color: var(--neutral-100);
+    transition: color .3s ease;
+}
+
+.nav-text:hover {
+    color: var(--supporting-green-300);
+}
+
+/* Dropdown */
+
+.has-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + var(--space-sm));
+    left: 0;
+
+    min-width: 24rem;
+    padding: var(--space-sm);
+    border-radius: var(--border-radius-md);
+
+    background: var(--neutral-100);
+    box-shadow: var(--shadow-lg);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(1rem);
+
+    transition: opacity .3s ease, transform .3s ease, visibility .3s ease;
+    z-index: 300;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--border-radius-sm);
+
+    color: var(--brand-main-500);
+    font-weight: var(--font-weight-md);
+    transition: background .3s ease, color .3s ease;
+}
+
+.dropdown-menu a:hover {
+    background: var(--supporting-green-100);
+    color: var(--supporting-green-700);
+}
+
+/* Logo */
+
 .logo-container {
     position: absolute;
     left: 50%;
@@ -75,27 +135,118 @@
     z-index: 200;
 }
 
-.nav-text {
-    font-family: var(--font-poppins);
-    font-weight: var(--font-weight-lg);
-}
-
 .logo {
     height: var(--logo-height);
     width: auto;
     display: block;
 }
 
+/* Top bar */
+
 .top-header-section {
     display: flex;
-    flex-direction: row;
-    position: sticky;
-    height: 5%;
     justify-content: space-between;
-    background-color: var(--brand-main-500);
-    padding-left: var(--space-xs);
-    padding-right: var(--space-xs);
+    align-items: center;
+    gap: var(--space-sm);
 
+    background-color: var(--brand-main-500);
+    padding: var(--space-xs) var(--space-md);
+}
+
+.top-header-section p,
+.top-header-section a {
+    font-size: var(--text-sm);
+    color: var(--neutral-200);
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+    :root {
+        --nav-height: 9rem;
+        --logo-height: 16rem;
+        --logo-lift: -5.5rem;
+    }
+
+    .menu {
+        gap: var(--space-sm);
+    }
+
+    .nav-left,
+    .nav-right {
+        gap: var(--space-sm);
+    }
+
+    .nav-text {
+        font-size: var(--text-sm);
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 650px) {
+    :root {
+        --nav-height: auto;
+        --logo-height: 12rem;
+        --logo-lift: 0;
+    }
+
+    .top-header-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .site-nav {
+        height: auto;
+        position: relative;
+    }
+
+    .site-nav nav {
+        padding: var(--space-md);
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: var(--space-md);
+        height: auto;
+    }
+
+    .nav-left,
+    .nav-right {
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .logo-container {
+        position: static;
+        transform: none;
+        order: -1;
+        margin-bottom: var(--space-sm);
+    }
+
+    .dropdown-menu {
+        position: static;
+        min-width: 100%;
+        margin-top: var(--space-sm);
+
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+
+        background: var(--brand-main-600);
+        box-shadow: none;
+    }
+
+    .dropdown-menu a {
+        color: var(--neutral-100);
+        text-align: center;
+    }
+
+    .dropdown-menu a:hover {
+        background: var(--brand-main-700);
+        color: var(--supporting-green-300);
+    }
 }
 
 /* ------------------------------------------ Header Styles End ---------------------------------------------------- */

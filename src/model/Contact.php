@@ -8,9 +8,6 @@ class Contact extends Model
     private $email;
     private $work_type;
 
-   
-
-
     function getName()
     {
         return $this->name;

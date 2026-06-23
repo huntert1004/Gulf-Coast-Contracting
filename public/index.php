@@ -1,13 +1,14 @@
 <?php
+
+require_once __DIR__ . '/../src/core/Router.php';
+
 require_once __DIR__ . '/../src/controller/HomeController.php';
 require_once __DIR__ . '/../src/controller/UserController.php';
 require_once __DIR__ . '/../src/controller/ContactController.php';
 require_once __DIR__ . '/../src/controller/QuoteController.php';
 require_once __DIR__ . '/../src/controller/DashboardController.php';
 
-
-
-$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$router = new Router();
 
 $homeController = new HomeController();
 $userController = new UserController();
@@ -15,24 +16,21 @@ $contactController = new ContactController();
 $quoteController = new QuoteController();
 $dashboardController = new DashboardController();
 
-if ($uri === '/') {
-    $homeController->index();
-} elseif ($uri === '/login') {
-    $userController->showLogin();
-} elseif ($uri === '/login-submit') {
-    $userController->auth();
-} elseif ($uri === '/logout') {
-    $userController->logout();
-} elseif ($uri === "/contact-submit") {
-    $contactController->submit();
-} elseif ($uri === '/quote-submit') {
-    $quoteController->submit();
-} 
-elseif ($uri === '/dashboard') {
-    $dashboardController->dashboard();
-} 
+/*
+|--------------------------------------------------------------------------
+| Routes
+|--------------------------------------------------------------------------
+*/
 
-else {
-    http_response_code(404);
-    echo "404 Not Found";
-}
+$router->get('/', [$homeController, 'index']);
+
+$router->get('/login', [$userController, 'showLogin']);
+$router->post('/login-submit', [$userController, 'auth']);
+$router->get('/logout', [$userController, 'logout']);
+
+$router->post('/contact-submit', [$contactController, 'submit']);
+$router->post('/quote-submit', [$quoteController, 'submit']);
+
+$router->get('/dashboard', [$dashboardController, 'dashboard']);
+
+$router->dispatch($_SERVER['REQUEST_URI'], $_SERVER['REQUEST_METHOD']);
