@@ -1,0 +1,298 @@
+/* =========================================
+   COMPONENTS
+   -----------------------------------------
+   Reusable UI elements used throughout the app:
+   - Buttons
+   - Cards
+   - Forms
+   - Modals
+   - Alerts
+
+   Small, reusable building blocks
+========================================= */
+
+
+
+/* ------------------------------------------
+   Hero Form
+------------------------------------------ */
+
+.hero-form {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 42rem;
+    justify-self: end;
+
+    padding: var(--space-xl);
+    border-radius: var(--border-radius-lg);
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: var(--shadow-lg);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.hero-form h2 {
+    margin-bottom: var(--space-md);
+    text-align: center;
+    color: var(--brand-main-500);
+    font-family: var(--font-poppins);
+    font-size: var(--text-lg);
+}
+
+.hero-form .user-box {
+    position: relative;
+    width: 100%;
+    margin-bottom: var(--space-md);
+}
+
+.hero-form .user-box input,
+.hero-form .user-box select {
+    width: 100%;
+    padding: 1.2rem 0;
+    font-size: var(--text-base);
+    font-family: var(--font-poppins);
+
+    color: var(--brand-main-500);
+    border: none;
+    border-bottom: 2px solid var(--brand-main-300);
+    outline: none;
+    background: transparent;
+}
+
+.hero-form .user-box input:focus,
+.hero-form .user-box select:focus {
+    border-bottom-color: var(--supporting-blue-600);
+}
+
+.hero-form .user-box label {
+    position: absolute;
+    top: 1.2rem;
+    left: 0;
+
+    font-size: var(--text-base);
+    color: var(--brand-main-500);
+
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+.hero-form .user-box input:focus ~ label,
+.hero-form .user-box input:valid ~ label,
+.hero-form .user-box select:focus ~ label,
+.hero-form .user-box select:valid ~ label {
+    top: -1.4rem;
+    font-size: var(--text-xs);
+    color: var(--supporting-blue-700);
+}
+
+/* ------------------------------------------
+   Button
+------------------------------------------ */
+
+.quote-submit-btn {
+    align-self: center;
+
+    min-width: 19rem;
+    height: 5.2rem;
+    border: none;
+    border-radius: 999px;
+
+    background: linear-gradient(
+        135deg,
+        var(--supporting-green-500),
+        var(--supporting-green-700)
+    );
+
+    color: var(--neutral-100);
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-lg);
+    cursor: pointer;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 0.3s ease;
+}
+
+.quote-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-icon {
+    display: none;
+    font-size: var(--text-md);
+}
+
+.quote-submit-btn.is-loading,
+.quote-submit-btn.is-success,
+.quote-submit-btn.is-error {
+    min-width: 5.2rem;
+    width: 5.2rem;
+    height: 5.2rem;
+    border-radius: 50%;
+}
+
+.quote-submit-btn.is-loading .btn-text,
+.quote-submit-btn.is-success .btn-text,
+.quote-submit-btn.is-error .btn-text {
+    display: none;
+}
+
+.quote-submit-btn.is-loading .btn-icon,
+.quote-submit-btn.is-success .btn-icon,
+.quote-submit-btn.is-error .btn-icon {
+    display: block;
+}
+
+.quote-submit-btn.is-loading .fa-spinner {
+    animation: spin 0.8s linear infinite;
+}
+
+.quote-submit-btn.is-success {
+    background: var(--supporting-green-500);
+}
+
+.quote-submit-btn.is-error {
+    background: var(--supporting-red-500);
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ------------------------------------------
+   Responsive
+------------------------------------------ */
+
+@media (max-width: 950px) {
+    .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: var(--space-xxl) var(--space-md);
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-form {
+        justify-self: center;
+        max-width: 50rem;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 550px) {
+    .hero {
+        padding: var(--space-xl) var(--space-sm);
+        gap: var(--space-xl);
+    }
+
+    .hero-header {
+        font-size: 4rem;
+    }
+
+    .hero-description {
+        font-size: var(--text-sm);
+    }
+
+    .hero-form {
+        padding: var(--space-lg);
+        border-radius: var(--border-radius-md);
+    }
+
+    .hero-form h2 {
+        font-size: var(--text-md);
+    }
+
+    .quote-submit-btn {
+        width: 100%;
+    }
+
+    .quote-submit-btn.is-loading,
+    .quote-submit-btn.is-success,
+    .quote-submit-btn.is-error {
+        width: 5.2rem;
+    }
+}
+
+/* Login Form Styles */
+
+
+.auth-page {
+    min-height: 100vh;
+    background: #f4f6f9;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-card {
+    width: 360px;
+    padding: 2rem;
+
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.auth-card h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.auth-card button {
+    width: 100%;
+    padding: 0.85rem;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #2563eb;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.auth-card button:hover {
+    background: #1d4ed8;
+}
+
+.auth-link {
+    margin-top: 1rem;
+    text-align: center;
+}
+

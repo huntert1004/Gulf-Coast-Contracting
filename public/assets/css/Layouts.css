@@ -1,0 +1,250 @@
+@import 'Variable.css';
+@import 'Base.css';
+@import 'Components.css';
+@import 'pages/Home.css';
+/* =========================================
+   LAYOUTS
+   -----------------------------------------
+   Defines the structure of the page:
+   - Header
+   - Sidebar
+   - Footer
+   - Main content area
+   - Page grid / flex layout
+
+   Controls WHERE things go on the page
+========================================= */
+
+
+/* ------------------------------------------ Header Styles Start ---------------------------------------------------- */
+
+
+
+:root {
+    --nav-height: clamp(80px, 10vw, 130px);
+    --logo-height: clamp(140px, 22vw, 300px);
+    --logo-lift: clamp(-95px, -7vw, -45px);
+}
+
+.site-nav {
+    position: sticky;
+    top: 0;
+    height: var(--nav-height);
+    background-color: var(--brand-main-500);
+    overflow: visible;
+    z-index: 100;
+}
+
+.site-nav nav {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.menu {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(1rem, 3vw, 2rem);
+    margin: 0;
+    padding: 0 var(--space-md);
+}
+
+.nav-left,
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex: 1;
+}
+
+.nav-left {
+    justify-content: flex-start;
+}
+
+.nav-right {
+    justify-content: flex-end;
+}
+
+.logo-container {
+    position: absolute;
+    left: 50%;
+    top: var(--logo-lift);
+    transform: translateX(-50%);
+    z-index: 200;
+}
+
+.nav-text {
+    font-family: var(--font-poppins);
+    font-weight: var(--font-weight-lg);
+}
+
+.logo {
+    height: var(--logo-height);
+    width: auto;
+    display: block;
+}
+
+.top-header-section {
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+    height: 5%;
+    justify-content: space-between;
+    background-color: var(--brand-main-500);
+    padding-left: var(--space-xs);
+    padding-right: var(--space-xs);
+
+}
+
+/* ------------------------------------------ Header Styles End ---------------------------------------------------- */
+
+/* ------------------------------------------ Footer Styles Start -------------------------------------------------- */
+
+.site-footer {
+    background: var(--brand-main-800);
+    color: var(--neutral-100);
+}
+
+.footer-wrapper {
+    padding: var(--space-xxl) clamp(2rem, 5vw, 8rem);
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: var(--space-xxl);
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.footer-company-name {
+    margin: 0;
+
+    color: var(--neutral-100);
+
+    font-size: var(--text-xxl);
+    font-weight: var(--font-weight-lg);
+    line-height: 1;
+
+    font-family: var(--font-poppins);
+}
+
+.footer-brand p {
+    max-width: 42rem;
+    color: var(--neutral-300);
+    line-height: 1.7;
+}
+
+.footer-links h3,
+.footer-services h3 {
+    margin-bottom: var(--space-md);
+    color: var(--neutral-100);
+}
+
+.footer-links ul,
+.footer-services ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.footer-links a,
+.footer-services a {
+    color: var(--neutral-300);
+    transition: color .3s ease;
+}
+
+.footer-links a:hover,
+.footer-services a:hover {
+    color: var(--supporting-green-300);
+}
+
+.footer-cta {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    width: fit-content;
+
+    padding:
+        var(--space-sm)
+        var(--space-lg);
+
+    border-radius: 999px;
+
+    background: linear-gradient(
+        135deg,
+        var(--supporting-green-500),
+        var(--supporting-green-700)
+    );
+
+    color: var(--neutral-100);
+    font-weight: var(--font-weight-lg);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.footer-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.1);
+    padding: var(--space-md);
+
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: var(--neutral-600);
+}
+
+@media (max-width: 900px) {
+
+    .footer-wrapper {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-xl);
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .footer-wrapper {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: var(--space-xl) var(--space-md);
+    }
+
+    .footer-brand,
+    .footer-links,
+    .footer-services {
+        align-items: center;
+    }
+
+    .footer-logo {
+        margin: 0 auto;
+    }
+
+    .footer-brand p {
+        max-width: 100%;
+    }
+
+    .footer-cta {
+        width: 100%;
+        max-width: 28rem;
+        margin: 0 auto;
+    }
+
+}
