@@ -1,0 +1,352 @@
+/* ------------------------------------------
+   Mini Hero
+------------------------------------------ */
+
+.mini-hero-container {
+    position: relative;
+    min-height: 38rem;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(10,22,36,.72),
+            rgba(24,49,79,.72)
+        ),
+        url("/assets/images/hero-img.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    z-index: 0;
+}
+
+.mini-hero-content {
+    position: relative;
+    z-index: 2;
+
+    padding: var(--space-xl);
+}
+
+.mini-hero-content h1 {
+    margin-bottom: var(--space-sm);
+
+    color: var(--neutral-100);
+
+    font-size: clamp(4rem, 6vw, 6rem);
+}
+
+.hero-breadcrumbs__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-xs);
+
+    flex-wrap: wrap;
+
+    font-size: var(--text-base);
+}
+
+.hero-breadcrumbs__content a {
+    color: var(--supporting-green-300);
+
+    transition: color .3s ease;
+}
+
+.hero-breadcrumbs__content a:hover {
+    color: var(--neutral-100);
+}
+
+.hero-breadcrumb-separator {
+    color: var(--neutral-500);
+}
+
+.hero-current {
+    color: var(--neutral-100);
+}
+
+/* ------------------------------------------
+   Responsive
+------------------------------------------ */
+
+@media (max-width: 768px) {
+
+    .mini-hero-container {
+        min-height: 30rem;
+    }
+
+    .mini-hero-content h1 {
+        font-size: clamp(3.2rem, 7vw, 4.6rem);
+    }
+
+    .hero-breadcrumbs__content {
+        font-size: var(--text-sm);
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .mini-hero-container {
+        min-height: 26rem;
+    }
+
+    .mini-hero-content {
+        padding: var(--space-lg);
+    }
+
+    .mini-hero-content h1 {
+        font-size: 3.2rem;
+    }
+
+    .hero-breadcrumbs__content {
+        font-size: var(--text-xs);
+    }
+
+}
+
+
+/* Why Call us Section */
+
+
+.why-call-us {
+    padding: var(--space-xxl) clamp(2rem, 5vw, 8rem);
+    background: var(--neutral-100);
+}
+
+.why-call-header {
+    max-width: 82rem;
+    margin: 0 auto var(--space-xl);
+    text-align: center;
+}
+
+.why-call-header h1 {
+    margin-bottom: var(--space-sm);
+    color: var(--brand-main-500);
+}
+
+.why-call-header h3 {
+    color: var(--neutral-800);
+    font-size: var(--text-md);
+    font-weight: var(--font-weight-md);
+    line-height: 1.6;
+}
+
+.why-call-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+}
+
+.why-call-card {
+    padding: var(--space-xl);
+    background: var(--neutral-200);
+    border-radius: var(--border-radius-lg);
+    border-left: 5px solid var(--supporting-green-500);
+    box-shadow: var(--shadow-sm);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.why-call-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+.why-call-card h2 {
+    margin-bottom: var(--space-sm);
+    color: var(--brand-main-500);
+    font-size: var(--text-lg);
+}
+
+.why-call-card p {
+    color: var(--neutral-800);
+    line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+    .why-call-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    .why-call-us {
+        padding: var(--space-xl) var(--space-md);
+    }
+
+    .why-call-header h1 {
+        font-size: 3.2rem;
+    }
+
+    .why-call-header h3 {
+        font-size: var(--text-base);
+    }
+
+    .why-call-card {
+        padding: var(--space-lg);
+    }
+}
+
+/* ------------------------------------------
+   New Construction Services
+------------------------------------------ */
+
+.new-construction-services {
+    padding: var(--space-xxl) clamp(2rem, 5vw, 8rem);
+    background: var(--neutral-100);
+}
+
+.construction-services-header {
+    max-width: 82rem;
+    margin: 0 auto var(--space-xxl);
+    text-align: center;
+}
+
+.construction-services-header h3 {
+    margin-bottom: var(--space-sm);
+    color: var(--supporting-green-500);
+    font-size: var(--text-sm);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.construction-services-header h1 {
+    margin-bottom: var(--space-md);
+    color: var(--brand-main-500);
+}
+
+.construction-services-header p {
+    color: var(--neutral-800);
+    line-height: 1.7;
+}
+
+/* Feature Rows */
+
+.construction-feature {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: var(--space-xxl);
+
+    max-width: 120rem;
+    margin: 0 auto var(--space-xxl);
+}
+
+.construction-feature:last-child {
+    margin-bottom: 0;
+}
+
+.construction-feature-reverse .construction-feature-image {
+    order: 2;
+}
+
+.construction-feature-reverse .construction-feature-content {
+    order: 1;
+}
+
+/* Images */
+
+.construction-feature-image {
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.construction-feature-image img {
+    display: block;
+    width: 100%;
+    height: clamp(30rem, 35vw, 48rem);
+    object-fit: cover;
+    transition: transform .4s ease;
+}
+
+.construction-feature-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Text Content */
+
+.construction-feature-content h2 {
+    margin-bottom: var(--space-sm);
+    color: var(--brand-main-500);
+    font-size: var(--text-xl);
+}
+
+.construction-feature-content p {
+    margin-bottom: var(--space-md);
+    color: var(--neutral-800);
+    line-height: 1.7;
+}
+
+.construction-feature-content ul {
+    display: grid;
+    gap: var(--space-sm);
+}
+
+.construction-feature-content li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+
+    color: var(--brand-main-500);
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-md);
+}
+
+.construction-feature-content i {
+    color: var(--supporting-green-500);
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+    .construction-feature,
+    .construction-feature-reverse {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    .construction-feature-reverse .construction-feature-image,
+    .construction-feature-reverse .construction-feature-content {
+        order: initial;
+    }
+
+    .construction-feature-content {
+        text-align: center;
+    }
+
+    .construction-feature-content ul {
+        max-width: 42rem;
+        margin: 0 auto;
+        text-align: left;
+    }
+}
+
+@media (max-width: 500px) {
+    .new-construction-services {
+        padding: var(--space-xl) var(--space-md);
+    }
+
+    .construction-services-header h1 {
+        font-size: 3.2rem;
+    }
+
+    .construction-feature-content h2 {
+        font-size: var(--text-lg);
+    }
+
+    .construction-feature-image img {
+        height: 26rem;
+    }
+}

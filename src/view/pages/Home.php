@@ -29,9 +29,10 @@ require __DIR__ . '/../partials/Header.php';
             <div class="user-box">
                 <select id="work_type" name="work_type" required>
                     <option value="" disabled selected></option>
-                    <option value="commercial roofing services">Commercial Roofing Services</option>
-                    <option value="residential roofing services">Residential Roofing Services</option>
-                    <option value="specialized roofing services">Specialized Roofing Services</option>
+                    <option value="construction">New Construction</option>
+                    <option value="home improvement">Home Improvement</option>
+                    <option value="outdoor living">Outdoor Living</option>
+                    <option value="specialty services">Specialty Services</option>
                 </select>
                 <label for="work_type">Service Needed</label>
             </div>

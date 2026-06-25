@@ -7,9 +7,11 @@ require_once __DIR__ . '/../src/controller/UserController.php';
 require_once __DIR__ . '/../src/controller/ContactController.php';
 require_once __DIR__ . '/../src/controller/QuoteController.php';
 require_once __DIR__ . '/../src/controller/DashboardController.php';
+require_once __DIR__ . '/../src/controller/ConstructionController.php';
 
 $router = new Router();
 
+$constructionController = new ConstructionController();
 $homeController = new HomeController();
 $userController = new UserController();
 $contactController = new ContactController();
@@ -23,6 +25,7 @@ $dashboardController = new DashboardController();
 */
 
 $router->get('/', [$homeController, 'index']);
+$router->get('/services/construction', [$constructionController, 'construction']);
 
 $router->get('/login', [$userController, 'showLogin']);
 $router->post('/login-submit', [$userController, 'auth']);
