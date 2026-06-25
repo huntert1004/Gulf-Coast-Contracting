@@ -50,9 +50,18 @@ require __DIR__ . '/../partials/Header.php';
 <!-- Failer Early Section -->
 <section class="fails-early">
     <div class="left-text">
-        <h3>Why Roofs Fail Early</h3>
-        <h1>Most Roof Problems Start With What You Can’t See</h1>
-        <p>Leaks, insurance issues, and early replacements often come from small installation details: flashing, fasteners, ventilation, underlayment, and cleanup. Rectangle Roofing follows a documented process on every Naples roof so those details are checked before they become expensive problems.</p>
+        <h3>Building Without the Stress</h3>
+
+        <h1>
+            Your Project Shouldn't Feel Like a Gamble
+        </h1>
+
+        <p>
+            Too many homeowners deal with missed deadlines, unexpected costs, poor communication,
+            and unfinished work. We believe every project should be organized, transparent,
+            and built with quality craftsmanship. From the initial estimate through the final
+            walkthrough, you'll always know what's happening and what comes next.
+        </p>
     </div>
     <div class="right-image">
         <img class="fails-image" src="/assets/images/roof-stock.png" alt="Roofing contractor inspecting a roof">
@@ -66,44 +75,64 @@ require __DIR__ . '/../partials/Header.php';
     <div class="offer-wrapper">
 
         <h1>What We Offer</h1>
-        <p>Comprehensive roofing services designed to maximize protection, durability, and long-term value for residential and commercial properties.</p>
+
+        <p>
+            From full construction projects to home renovations and outdoor living spaces,
+            Gulf Coast Contracting delivers quality craftsmanship built to last.
+        </p>
 
         <div class="offer-grid">
 
             <div class="offer-card">
                 <img class="offer-image"
-                    src="/assets/images/rrs.png"
-                    alt="Residential Roofing">
+                    src="/assets/images/kitch-stock.jpg"
+                    alt="Construction">
 
-                <h2>Residential Roofing</h2>
-                <p>Complete roof replacements, inspections, and repairs designed to protect your home through Florida heat, rain, and storms.</p>
+                <h2>Construction</h2>
+
+                <p>
+                    New construction, additions, structural work, and complete building
+                    projects completed with quality craftsmanship and attention to detail.
+                </p>
             </div>
 
             <div class="offer-card">
                 <img class="offer-image"
-                    src="/assets/images/srs.webp"
-                    alt="Specialized Roofing">
+                    src="/assets/images/home-stock.jpg"
+                    alt="Home Improvement">
 
-                <h2>Specialized Roofing</h2>
-                <p>Metal, tile, flat roof, and custom roofing solutions installed with the right materials and details for each property.</p>
+                <h2>Home Improvement</h2>
+
+                <p>
+                    Kitchen remodels, bathroom renovations, flooring, painting, drywall,
+                    and upgrades that improve comfort and increase home value.
+                </p>
             </div>
 
             <div class="offer-card">
                 <img class="offer-image"
-                    src="/assets/images/crs.png"
-                    alt="Commercial Roofing">
+                    src="/assets/images/porch-stock.jpg"
+                    alt="Outdoor Living">
 
-                <h2>Commercial Roofing</h2>
-                <p>Durable roofing systems for offices, retail spaces, warehouses, and commercial properties that need long-term protection.</p>
+                <h2>Outdoor Living</h2>
+
+                <p>
+                    Patios, pergolas, outdoor kitchens, screened lanais, and custom spaces
+                    designed for enjoying Southwest Florida living.
+                </p>
             </div>
 
             <div class="offer-card">
                 <img class="offer-image"
-                    src="/assets/images/repairs.webp"
-                    alt="Roof Repairs">
+                    src="/assets/images/kitchen-stock.jpg"
+                    alt="Specialty Services">
 
-                <h2>Roof Repair Services</h2>
-                <p>Fast repair services for leaks, storm damage, missing shingles, flashing issues, and small problems before they become expensive.</p>
+                <h2>Specialty Services</h2>
+
+                <p>
+                    Custom projects, repairs, unique installations, and specialty work
+                    tailored to meet the needs of every property.
+                </p>
             </div>
 
         </div>
@@ -112,79 +141,164 @@ require __DIR__ . '/../partials/Header.php';
 
 </section>
 
-<!-- 5 Step section -->
+
+<!-- 5 Step Process -->
 <section class="five-step">
-    <h3>WHAT HAPPENS ON YOUR ROOF</h3>
-    <h1>Five Steps. Every Roof. No Shortcuts.</h1>
-    <p>Here's exactly what we do, and why each step matters for your home.</p>
+
+    <h3>OUR PROCESS</h3>
+
+    <h1>Five Steps. Every Project. No Shortcuts.</h1>
+
+    <p>
+        Whether you're building something new or transforming an existing space,
+        every project follows a proven process designed to deliver quality craftsmanship
+        from start to finish.
+    </p>
+
     <div class="step-card">
         <div class="step-num">1</div>
-        <p>Measure & Plan</p>
-        <p>We map your roof down to the square foot before writing a single number. Slope, facets, penetrations, your estimate reflects your actual roof, not a guess from the driveway.</p>
+
+        <p>Consultation & Planning</p>
+
+        <p>
+            Every successful project begins with understanding your goals. We discuss
+            your vision, evaluate the project site, establish a realistic budget, and
+            develop a plan tailored to your needs.
+        </p>
     </div>
+
     <div class="step-card">
         <div class="step-num">2</div>
-        <p>Inspect the Deck</p>
-        <p>Before anything goes on top, we check what's underneath. Damaged plywood gets replaced. Proper underlayment and waterproofing go down to protect against Florida rain.</p>
+
+        <p>Design & Preparation</p>
+
+        <p>
+            We finalize layouts, materials, permits, and project scheduling before
+            construction begins. Proper preparation helps avoid delays and keeps your
+            project moving efficiently.
+        </p>
     </div>
 
     <div class="step-card">
         <div class="step-num">3</div>
-        <p>‍Seal Every Penetration</p>
-        <p>Pipe boots, vents, flashing around walls and edges, these are where most leaks actually start. We seal each one correctly the first time.</p>
+
+        <p>Construction & Renovation</p>
+
+        <p>
+            Our team completes each phase with attention to detail, quality materials,
+            and skilled craftsmanship while maintaining a clean and organized job site
+            throughout the project.
+        </p>
     </div>
 
     <div class="step-card">
         <div class="step-num">4</div>
-        <p>Install to Manufacturer Specs</p>
-        <p>Every shingle, tile, or panel is installed using the manufacturer's approved methods. That's what qualifies your roof for full warranty coverage, not just having the right material, but installing it correctly.</p>
+
+        <p>Quality Assurance</p>
+
+        <p>
+            Every detail is inspected throughout construction to ensure workmanship
+            meets our standards. Any adjustments are addressed before the project
+            reaches completion.
+        </p>
     </div>
+
     <div class="step-card">
         <div class="step-num">5</div>
-        <p>Final Inspection & Documentation</p>
-        <p>We photograph every critical step and walk through a multi-point checklist. You'll see exactly what was done, not just trust that it was.</p>
+
+        <p>Final Walkthrough & Completion</p>
+
+        <p>
+            We walk through the finished project with you, answer any questions, and
+            ensure every detail meets your expectations before considering the job
+            complete.
+        </p>
     </div>
 
 </section>
 
 <section class="faq-section">
-    <h3>Frequently Asked Questions</h3>
-    <h2>What SWFL Homeowners Usually Ask Before Moving Forward</h2>
+
+    <h3>Your Questions, Answered</h3>
+
+    <h2>
+        Everything You Should Know Before Starting Your Next Project
+    </h2>
+
     <div class="faq-card">
         <div class="plus"></div>
-        <p>How do I know if I actually need a new roof?</p>
-        <p>Not every aging roof needs immediate replacement. We inspect the condition, flashing, ventilation, shingles, underlayment, and deck before recommending repair or replacement.</p>
+
+        <p>Do you provide free estimates?</p>
+
+        <p>
+            Yes. Every project starts with a free consultation where we discuss
+            your goals, evaluate the project, and provide a detailed estimate
+            so you know exactly what to expect before any work begins.
+        </p>
     </div>
 
     <div class="faq-card">
         <div class="plus"></div>
-        <p>Do you offer free inspections and estimates?</p>
-        <p>Yes. We provide free roof inspections and written estimates so you understand the condition of your roof, the recommended work, and the expected cost before moving forward.</p>
+
+        <p>Can you help with both renovations and new construction?</p>
+
+        <p>
+            Absolutely. Whether you're remodeling a kitchen, adding living
+            space, building an outdoor entertainment area, or starting a new
+            construction project, our team can guide you through every stage
+            from planning to completion.
+        </p>
     </div>
 
     <div class="faq-card">
         <div class="plus"></div>
-        <p>Can you help with storm damage?</p>
-        <p>Yes. We inspect storm damage, document problem areas, repair active leaks, and help homeowners understand what needs to be fixed after heavy wind, rain, or hurricane conditions.</p>
+
+        <p>How long will my project take?</p>
+
+        <p>
+            Every project is different depending on its size and complexity.
+            Before work begins, we provide a realistic timeline and keep you
+            informed throughout construction so there are no surprises.
+        </p>
     </div>
 
     <div class="faq-card">
         <div class="plus"></div>
-        <p>How long does a roof replacement usually take?</p>
-        <p>Most residential roof replacements can be completed in a few days, depending on roof size, material, weather, and any damaged decking that needs to be replaced.</p>
+
+        <p>Will I know what's happening during construction?</p>
+
+        <p>
+            Yes. Clear communication is one of our highest priorities. We keep
+            you updated on project progress, scheduling, material deliveries,
+            and any changes so you're never left wondering what's next.
+        </p>
     </div>
 
     <div class="faq-card">
         <div class="plus"></div>
-        <p>What types of roofing do you work with?</p>
-        <p>We work with shingle, metal, tile, flat, and specialty roofing systems for both residential and commercial properties throughout Southwest Florida.</p>
+
+        <p>Are you licensed and insured?</p>
+
+        <p>
+            We believe every homeowner deserves peace of mind. Our team follows
+            professional building practices while maintaining the licensing and
+            insurance required to complete projects safely and responsibly.
+        </p>
     </div>
 
     <div class="faq-card">
         <div class="plus"></div>
-        <p>Do you offer roof repairs, or only full replacements?</p>
-        <p>We offer both. If your roof can be repaired safely and effectively, we’ll recommend the repair instead of pushing a full replacement you may not need yet.</p>
+
+        <p>How do you ensure quality workmanship?</p>
+
+        <p>
+            Every project follows a structured process that includes careful
+            planning, skilled craftsmanship, ongoing quality checks, and a
+            final walkthrough to make sure every detail meets our standards
+            before the job is complete.
+        </p>
     </div>
+
 </section>
 
 

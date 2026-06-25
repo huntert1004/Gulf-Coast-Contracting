@@ -23,10 +23,11 @@
                         <a href="/services" class="nav-text">Services</a>
 
                         <ul class="dropdown-menu">
-                            <li><a href="/services/residential-roofing">Residential Roofing</a></li>
-                            <li><a href="/services/commercial-roofing">Commercial Roofing</a></li>
-                            <li><a href="/services/specialized-roofing">Specialized Roofing</a></li>
-                            <li><a href="/services/roof-repairs">Roof Repairs</a></li>
+                            <li><a href="/services/construction">Construction</a></li>
+                            <li><a href="/services/home-improvement">Home Improvement</a></li>
+                            <li><a href="/services/outdoor-living">Outdoor Living</a></li>
+                            <li><a href="/services/specialty">Specialty</a></li>
+                            <li><a href="/services/solar">Solar Power</a></li>
                         </ul>
                     </li>
                     <li><a href="/projects" class="nav-text">Projects</a></li>
