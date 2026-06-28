@@ -11,7 +11,7 @@
 
     <div class="top-header-section">
         <p class="nav-text">Located in SWFL</p>
-        <p class="nav-text">Call or Text 239-322-4444</p>
+        <p class="nav-text">Call or Text 239-322-XXXX</p>
     </div>
     <header class="site-nav">
 
@@ -27,7 +27,6 @@
                             <li><a href="/services/home-improvement">Home Improvement</a></li>
                             <li><a href="/services/outdoor-living">Outdoor Living</a></li>
                             <li><a href="/services/specialty">Specialty</a></li>
-                            <li><a href="/services/solar">Solar Power</a></li>
                         </ul>
                     </li>
                     <li><a href="/projects" class="nav-text">Projects</a></li>
