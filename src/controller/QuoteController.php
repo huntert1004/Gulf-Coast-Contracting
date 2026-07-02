@@ -2,30 +2,58 @@
 
 
 require_once __DIR__ . '/../model/Quote.php';
+require_once __DIR__ . '/../validation/QuoteValidator.php';
 
 class QuoteController
 {
     public function submit()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $contact = new Quote();
 
-            $contact->setName($_POST['name']);
-            $contact->setEmail($_POST['email']);
-            $contact->setMessage($_POST['message']);
-            $contact->setPhone($_POST['phone']);
-            $contact->setService($_POST['service']);
-    
-            $contact->save();
+            header('Content-Type: application/json');
+
+            if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+                http_response_code(405);
+                echo json_encode([
+                    'success' => false,
+                    'message' => 'Method not allowed.'
+                ]);
+                exit;
+            }
+
+            $validator = new QuoteValidator();
+
+            $errors = $validator->validate($_POST);
+
+            if (!empty($errors)) {
+                http_response_code(400);
+
+                echo json_encode([
+                    'success' => false,
+                    'errors' => $errors
+                ]);
+
+                exit;
+            }
+            $quote = new Quote();
+
+            $quote->setName($_POST['name']);
+            $quote->setEmail($_POST['email']);
+            $quote->setPhone($_POST['phone']);
+            $quote->setAddress($_POST['address']);
+            $quote->setCity($_POST['city']);
+            $quote->setZipCode($_POST['zip']);
+            $quote->setServices($_POST['services'] ?? []);
+            $quote->setMessage($_POST['message']);
+
+            $quote->save();
 
             $success = "Message sent successfully.";
-
-            require __DIR__ . '/../views/contact.php';
         }
     }
 
     public function showForm()
     {
-        require __DIR__ . '/../views/contact.php';
+        require __DIR__ . '/../view/pages/Quote.php';
     }
 }

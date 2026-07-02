@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title><?= $title ?? 'Gulf Coast Contracting'; ?></title>
-    <link rel="stylesheet" href="/assets/css/Layouts.css">
+    <link rel="stylesheet" href="/assets/css/Main.css">
 </head>
 
 <body>
@@ -20,7 +20,7 @@
                 <div class="nav-left">
                     <li><a href="/" class="nav-text">Home</a></li>
                     <li class="nav-item has-dropdown">
-                        <a href="/services" class="nav-text">Services</a>
+                        <a href="/services/construction" class="nav-text">Services</a>
 
                         <ul class="dropdown-menu">
                             <li><a href="/services/construction">Construction</a></li>
@@ -29,7 +29,7 @@
                             <li><a href="/services/specialty">Specialty</a></li>
                         </ul>
                     </li>
-                    <li><a href="/projects" class="nav-text">Projects</a></li>
+                    <!-- <li><a href="/projects" class="nav-text">Projects</a></li> -->
                 </div>
                 <li class="logo-container">
                     <a href="/">

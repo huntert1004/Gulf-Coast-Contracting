@@ -39,7 +39,7 @@
     <div class="construction-feature">
         <div class="construction-feature-image">
             <img
-                src="/assets/images/home-addition.jpg"
+                src="/assets/images/home-addition2.webp"
                 alt="Home addition">
         </div>
 
@@ -64,7 +64,7 @@
     <div class="construction-feature construction-feature-reverse">
         <div class="construction-feature-image">
             <img
-                src="/assets/images/kitchen-remodel.jpg"
+                src="/assets/images/kitchen-remodel.webp"
                 alt="Kitchen remodeling">
         </div>
 
@@ -89,7 +89,7 @@
     <div class="construction-feature">
         <div class="construction-feature-image">
             <img
-                src="/assets/images/bathroom-remodel.jpg"
+                src="/assets/images/bathroom-remodel.jpeg"
                 alt="Bathroom remodeling">
         </div>
 

@@ -40,6 +40,7 @@ $specialtyController = new SpecialtyController();
 */
 
 $router->get('/', [$homeController, 'index']);
+$router->get('/contact', [$quoteController, 'showForm']);
 
 // Services
 $router->get('/services/construction', [$constructionController, 'construction']);

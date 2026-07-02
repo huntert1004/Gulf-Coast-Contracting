@@ -1,0 +1,431 @@
+/* =========================================
+   Contact Page
+========================================= */
+
+.get-in-touch,
+.quote-form {
+    padding: var(--space-xxl) var(--space-md);
+}
+
+/* ------------------------------------------
+   Get In Touch Section
+------------------------------------------ */
+
+.get-in-touch {
+    max-width: 120rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.get-in-touch h1 {
+    color: var(--brand-main-500);
+    font-family: var(--font-poppins);
+    font-size: clamp(3.2rem, 5vw, 5.6rem);
+    margin-bottom: var(--space-sm);
+}
+
+.get-in-touch h3 {
+    max-width: 70rem;
+    margin: 0 auto var(--space-xl);
+    color: var(--neutral-700);
+    font-size: var(--text-md);
+    font-weight: var(--font-weight-md);
+}
+
+.in-touch-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-lg);
+}
+
+.in-touch-content i,
+.in-touch-content p {
+    margin: 0;
+}
+
+.in-touch-content i {
+    width: 6.4rem;
+    height: 6.4rem;
+    margin: 0 auto var(--space-sm);
+
+    border-radius: 50%;
+    background: var(--supporting-green-100);
+    color: var(--supporting-green-700);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: var(--text-md);
+    transition: all 0.3s ease;
+}
+
+.in-touch-content p {
+    color: var(--brand-main-500);
+    font-size: var(--text-sm);
+    line-height: 1.6;
+}
+
+.in-touch-content i:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: var(--shadow-md);
+}
+
+/* ------------------------------------------
+   Quote Form Section
+------------------------------------------ */
+
+.quote-form {
+    background: var(--neutral-100);
+}
+
+.quote-form form {
+    width: 100%;
+    max-width: 86rem;
+    margin: 0 auto;
+    padding: var(--space-xl);
+
+    background: var(--neutral-000);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+}
+
+.quote-form h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+
+    color: var(--brand-main-500);
+    font-family: var(--font-poppins);
+    font-size: clamp(2.8rem, 4vw, 4.2rem);
+
+    margin-bottom: var(--space-md);
+}
+
+.quote-form .user-box {
+    position: relative;
+    width: 100%;
+}
+
+/* Normal floating-label fields only.
+   This prevents the searchable multi-select inputs/checkboxes from inheriting form styles. */
+.quote-form .user-box:not(.work-type-box) input,
+.quote-form .user-box:not(.work-type-box) textarea {
+    width: 100%;
+    padding: 1.2rem 0;
+
+    color: var(--brand-main-500);
+    font-family: var(--font-poppins);
+    font-size: var(--text-base);
+
+    border: none;
+    border-bottom: 2px solid var(--brand-main-300);
+    outline: none;
+    background: transparent;
+}
+
+
+
+.quote-form .user-box:not(.work-type-box) label {
+    position: absolute;
+    top: 1.2rem;
+    left: 0;
+
+    color: var(--brand-main-500);
+    font-size: var(--text-base);
+
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+.quote-form .user-box:not(.work-type-box) input:focus,
+.quote-form .user-box:not(.work-type-box) textarea:focus {
+    border-bottom-color: var(--supporting-blue-600);
+}
+
+.quote-form .user-box:not(.work-type-box) input:focus ~ label,
+.quote-form .user-box:not(.work-type-box) input:valid ~ label,
+.quote-form .user-box:not(.work-type-box) textarea:focus ~ label,
+.quote-form .user-box:not(.work-type-box) textarea:valid ~ label {
+    top: -1.4rem;
+    color: var(--supporting-blue-700);
+    font-size: var(--text-xs);
+}
+
+.work-type-box,
+.quote-form .user-box:has(textarea),
+.quote-submit-btn {
+    grid-column: 1 / -1;
+}
+
+/* ------------------------------------------
+   Searchable Multi Select
+------------------------------------------ */
+
+.work-type-box {
+    position: relative;
+}
+
+.work-type-label {
+    display: block;
+    margin-bottom: var(--space-xs);
+
+    color: var(--brand-main-500);
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-lg);
+}
+
+.work-type-toggle {
+    width: 100%;
+    padding: var(--space-md);
+
+    border: 2px solid var(--brand-main-300);
+    border-radius: var(--border-radius-md);
+    background: transparent;
+
+    color: var(--brand-main-500);
+    font-family: var(--font-poppins);
+    font-size: var(--text-base);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.work-type-toggle:hover,
+.work-type-toggle.is-open {
+    border-color: var(--supporting-blue-600);
+    box-shadow: var(--shadow-sm);
+}
+
+.work-type-toggle i {
+    transition: transform 0.3s ease;
+}
+
+.work-type-toggle.is-open i {
+    transform: rotate(180deg);
+}
+
+.work-type-dropdown {
+    display: none;
+
+    position: absolute;
+    z-index: 20;
+    top: calc(100% + var(--space-xs));
+    left: 0;
+
+    width: 100%;
+    max-height: 32rem;
+    padding: var(--space-md);
+
+    background: var(--neutral-000);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--neutral-300);
+
+    overflow: hidden;
+}
+
+.work-type-dropdown.is-open {
+    display: block;
+}
+
+.work-type-search {
+    width: 100%;
+    margin-bottom: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+
+    border: 1px solid var(--neutral-300);
+    border-radius: var(--border-radius-sm);
+    background: var(--neutral-000);
+
+    color: var(--brand-main-500);
+    font-size: var(--text-sm);
+    font-family: var(--font-poppins);
+    outline: none;
+}
+
+.work-type-search:focus {
+    border-color: var(--supporting-blue-600);
+}
+
+.work-type-options {
+    max-height: 22rem;
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.work-type-options label {
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--border-radius-sm);
+
+    color: var(--brand-main-500);
+    font-size: var(--text-sm);
+
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.work-type-options label:hover {
+    background: var(--supporting-green-100);
+}
+
+.work-type-options input[type="checkbox"] {
+    width: auto;
+    accent-color: var(--supporting-green-600);
+    cursor: pointer;
+}
+
+/* ------------------------------------------
+   Submit Button
+------------------------------------------ */
+
+.quote-submit-btn {
+    justify-self: center;
+    align-self: center;
+
+    min-width: 19rem;
+    height: 5.2rem;
+    border: none;
+    border-radius: 999px;
+
+    background: linear-gradient(
+        135deg,
+        var(--supporting-green-500),
+        var(--supporting-green-700)
+    );
+
+    color: var(--neutral-100);
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-lg);
+    cursor: pointer;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 0.3s ease;
+}
+
+.quote-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ------------------------------------------
+   Responsive
+------------------------------------------ */
+
+@media (max-width: 900px) {
+    .in-touch-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .quote-form form {
+        max-width: 68rem;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 550px) {
+    .get-in-touch,
+    .quote-form {
+        padding: var(--space-xl) var(--space-sm);
+    }
+
+    .in-touch-content {
+        grid-template-columns: 1fr;
+    }
+
+    .quote-form form {
+        padding: var(--space-lg);
+        border-radius: var(--border-radius-md);
+    }
+
+    .quote-submit-btn {
+        width: 100%;
+    }
+
+    .work-type-dropdown {
+        position: static;
+        margin-top: var(--space-sm);
+    }
+}
+
+/* Messgae Box With Label */
+
+/* ------------------------------------------
+   Message Textarea
+------------------------------------------ */
+/* ------------------------------------------
+   Message Box
+------------------------------------------ */
+
+.message-box {
+    grid-column: 1 / -1;
+}
+
+.message-label {
+    position: static !important;
+
+    display: block;
+    margin-bottom: var(--space-sm);
+
+    color: var(--brand-main-500);
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-lg);
+
+    pointer-events: auto;
+}
+
+.message-label span {
+    color: var(--neutral-600);
+    font-weight: var(--font-weight-md);
+}
+
+.message-box textarea {
+    width: 100%;
+    min-height: 18rem;
+
+    padding: var(--space-md);
+
+    border: 2px solid var(--brand-main-300);
+    border-radius: var(--border-radius-md);
+
+    background: var(--neutral-000);
+
+    color: var(--brand-main-500);
+
+    font-family: var(--font-poppins);
+    font-size: var(--text-base);
+
+    resize: vertical;
+    outline: none;
+
+    transition:
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+.message-box textarea:focus {
+    border-color: var(--supporting-blue-600);
+    box-shadow: var(--shadow-sm);
+}
+
+.message-box textarea::placeholder {
+    color: var(--neutral-500);
+}

@@ -41,7 +41,7 @@
     <div class="construction-feature">
         <div class="construction-feature-image">
             <img
-                src="/assets/images/custom-carpentry.jpg"
+                src="/assets/images/custom-carpentry.webp"
                 alt="Custom carpentry and trim work">
         </div>
 
@@ -66,7 +66,7 @@
     <div class="construction-feature construction-feature-reverse">
         <div class="construction-feature-image">
             <img
-                src="/assets/images/storm-prep.jpg"
+                src="/assets/images/storm-prep.jpeg"
                 alt="Storm preparation and recovery work">
         </div>
 
@@ -91,7 +91,7 @@
     <div class="construction-feature">
         <div class="construction-feature-image">
             <img
-                src="/assets/images/smart-home.jpg"
+                src="/assets/images/smart-home.jpeg"
                 alt="Smart home installation">
         </div>
 
@@ -116,7 +116,7 @@
     <div class="construction-feature construction-feature-reverse">
         <div class="construction-feature-image">
             <img
-                src="/assets/images/custom-storage.jpg"
+                src="/assets/images/custom-storage2.jpg"
                 alt="Custom storage solutions">
         </div>
 
@@ -166,7 +166,7 @@
     <div class="construction-feature construction-feature-reverse">
         <div class="construction-feature-image">
             <img
-                src="/assets/images/gate-installation.jpg"
+                src="/assets/images/gate-installation.jpeg"
                 alt="Gate installation">
         </div>
 

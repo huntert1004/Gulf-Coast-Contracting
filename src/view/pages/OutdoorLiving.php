@@ -72,7 +72,7 @@
     <div class="construction-feature">
         <div class="construction-feature-image">
             <img
-                src="/assets/images/lanai-enclosure.jpg"
+                src="/assets/images/outdoor-living2.jpg"
                 alt="Custom lanai enclosure">
         </div>
 
@@ -97,7 +97,7 @@
     <div class="construction-feature construction-feature-reverse">
         <div class="construction-feature-image">
             <img
-                src="/assets/images/outdoor-kitchen.jpg"
+                src="/assets/images/outdoor-kitchen.webp"
                 alt="Custom outdoor kitchen">
         </div>
 
