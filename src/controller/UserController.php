@@ -14,20 +14,20 @@ class UserController
                 return;
             }
 
-            $validator = new UserValidator();
+            // $validator = new UserValidator();
 
-            $errors = $validator->validate($_POST);
+            // $errors = $validator->validate($_POST);
 
-            if (!empty($errors)) {
-                http_response_code(400);
+            // if (!empty($errors)) {
+            //     http_response_code(400);
 
-                echo json_encode([
-                    'success' => false,
-                    'errors' => $errors
-                ]);
+            //     echo json_encode([
+            //         'success' => false,
+            //         'errors' => $errors
+            //     ]);
 
-                exit;
-            }
+            //     exit;
+            // }
             $user = new User();
 
             $user->setName($_POST['name']);

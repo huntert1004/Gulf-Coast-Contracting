@@ -11,6 +11,7 @@ require_once __DIR__ . '/../src/controller/ConstructionController.php';
 require_once __DIR__ . '/../src/controller/HomeImprovementController.php';
 require_once __DIR__ . '/../src/controller/OutdoorLivingController.php';
 require_once __DIR__ . '/../src/controller/SpecialtyController.php';
+require_once __DIR__ . '/../src/controller/RegisterController.php';
 
 $router = new Router();
 
@@ -32,6 +33,7 @@ $constructionController = new ConstructionController();
 $homeimpromentController = new HomeImprovementController();
 $outdoorlivingController = new OutdoorLivingController();
 $specialtyController = new SpecialtyController();
+$registerController = new RegisterController();
 
 /*
 |--------------------------------------------------------------------------
@@ -49,8 +51,10 @@ $router->get('/services/outdoor-living', [$outdoorlivingController, 'outdoorLivi
 $router->get('/services/specialty', [$specialtyController, 'specialty']);
 
 // Auth
+$router->get('/register', [$registerController, 'register']);
 $router->get('/login', [$userController, 'showLogin']);
 $router->post('/login-submit', [$userController, 'auth']);
+$router->post('/register-submit', [$userController, 'createUser']);
 $router->get('/logout', [$userController, 'logout']);
 
 // Forms Quote and Contact Index Hero Form

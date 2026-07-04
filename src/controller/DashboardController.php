@@ -5,4 +5,5 @@ class DashboardController
     {
         require __DIR__ . '/../view/pages/Dashboard.php';
     }
+    
 }
