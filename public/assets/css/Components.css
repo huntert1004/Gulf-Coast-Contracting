@@ -296,3 +296,244 @@
     text-align: center;
 }
 
+/* --------------------Why Hire Start------------------------ */
+/* ------------------------------------------
+   Why Hire Gulf Coast Contracting
+------------------------------------------ */
+
+.why-hire {
+    padding: var(--space-xxl) clamp(2rem, 5vw, 8rem);
+    background: var(--neutral-200);
+}
+
+.why-hire-content {
+    max-width: 80rem;
+    margin: 0 auto var(--space-xxl);
+    text-align: center;
+}
+
+.why-hire-content h1 {
+    margin-bottom: var(--space-sm);
+    color: var(--brand-main-500);
+}
+
+.why-hire-content h3 {
+    color: var(--neutral-800);
+    font-weight: var(--font-weight-md);
+    line-height: 1.6;
+}
+
+/* ------------------------------------------
+   Cards
+------------------------------------------ */
+
+.why-hire-card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--space-lg);
+
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.why-hire-card {
+    padding: var(--space-xl);
+
+    text-align: center;
+
+    background: var(--neutral-100);
+
+    border-radius: var(--border-radius-lg);
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    cursor: default;
+}
+
+.why-hire-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.circle {
+    width: 7rem;
+    height: 7rem;
+
+    margin: 0 auto var(--space-md);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        var(--supporting-green-500),
+        var(--supporting-green-700)
+    );
+
+    color: var(--neutral-100);
+
+    transition:
+        transform .3s ease,
+        background .3s ease;
+}
+
+.circle i {
+    display: block;
+    line-height: 1;
+    font-size: 2.8rem;
+    transform: translateY(1px);
+}
+
+.why-hire-card:hover .circle {
+    transform: scale(1.08) rotate(5deg);
+}
+
+.why-hire-card h3 {
+    margin-bottom: var(--space-sm);
+
+    color: var(--brand-main-500);
+
+    font-size: var(--text-md);
+
+    line-height: 1.3;
+}
+
+.why-hire-card p {
+    color: var(--neutral-800);
+
+    line-height: 1.7;
+}
+
+/* ------------------------------------------
+   Footer CTA
+------------------------------------------ */
+
+.why-hire-footer {
+    max-width: 90rem;
+
+    margin: var(--space-xxl) auto 0;
+
+    padding-top: var(--space-xl);
+
+    text-align: center;
+
+    border-top: 2px solid var(--neutral-400);
+}
+
+.why-hire-footer h2 {
+    margin-bottom: var(--space-md);
+
+    color: var(--brand-main-500);
+}
+
+.why-hire-footer p {
+    max-width: 75rem;
+
+    margin: 0 auto;
+
+    color: var(--neutral-800);
+
+    line-height: 1.8;
+}
+
+.why-hire-contact {
+    margin-top: var(--space-lg);
+
+    font-size: var(--text-md);
+
+    font-weight: var(--font-weight-md);
+}
+
+.why-hire-contact a {
+    color: var(--supporting-green-600);
+
+    font-weight: var(--font-weight-lg);
+
+    transition: color .3s ease;
+}
+
+.why-hire-contact a:hover {
+    color: var(--supporting-green-400);
+}
+
+.why-hire-contact strong {
+    color: var(--brand-main-500);
+}
+.why-hire-footer {
+    background: var(--neutral-100);
+    border: none;
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-sm);
+}
+
+/* ------------------------------------------
+   Tablet
+------------------------------------------ */
+
+@media (max-width: 1100px) {
+
+    .why-hire-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* ------------------------------------------
+   Mobile
+------------------------------------------ */
+
+@media (max-width: 650px) {
+
+    .why-hire {
+        padding: var(--space-xl) var(--space-md);
+    }
+
+    .why-hire-content {
+        margin-bottom: var(--space-xl);
+    }
+
+    .why-hire-card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-hire-content h1 {
+        font-size: 3.2rem;
+    }
+
+    .why-hire-content h3 {
+        font-size: var(--text-base);
+    }
+
+    .why-hire-card {
+        padding: var(--space-lg);
+    }
+
+    .circle {
+        width: 6rem;
+        height: 6rem;
+
+        font-size: 2.4rem;
+    }
+
+    .why-hire-footer {
+        margin-top: var(--space-xl);
+    }
+
+    .why-hire-footer h2 {
+        font-size: var(--text-lg);
+    }
+
+    .why-hire-contact {
+        font-size: var(--text-base);
+    }
+
+}
+/* --------------------Why Hire End------------------------ */

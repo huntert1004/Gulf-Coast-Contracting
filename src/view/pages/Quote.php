@@ -23,17 +23,35 @@
 
 <!-- Get IN Touch Text section -->
 <section class="get-in-touch">
+
     <h1>Get In Touch</h1>
-    <h3>Contact us with confidence. You’re in the best hands!</h3>
+
+    <h3>
+        Contact us with confidence. You're in the best hands!
+    </h3>
+
     <div class="in-touch-content">
-        <i class="fa-solid fa-phone"></i>
-        <p>239-322-XXXX</p>
-        <i class="fa-solid fa-envelope"></i>
-        <p>test@test.com</p>
-        <i class="fa-solid fa-location-dot"></i>
-        <p>1234 Wonderland Drive, Cape Coral, Florida</p>
-        <i class="fa-solid fa-clock"></i>
-        <p>Monday to Friday: 8am – 5pm</p>
+
+        <div class="contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <p>239-322-XXXX</p>
+        </div>
+
+        <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <p>test@test.com</p>
+        </div>
+
+        <div class="contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <p>1234 Wonderland Drive<br>Cape Coral, FL</p>
+        </div>
+
+        <div class="contact-item">
+            <i class="fa-solid fa-clock"></i>
+            <p>Monday – Friday<br>8:00 AM – 5:00 PM</p>
+        </div>
+
     </div>
 
 </section>
@@ -41,7 +59,7 @@
 <!-- Quote Form -->
 <section class="quote-form">
     <form method="POST" action="/quote-submit">
-        <h2>Get A Quote Today</h2>
+        <h2>Get Free Estimate Today</h2>
 
         <div class="user-box">
             <input type="text" id="name" name="name" required>

@@ -221,44 +221,82 @@ require __DIR__ . '/../partials/Header.php';
 
 <!-- Why Hire Section  -->
 <section class="why-hire">
+
     <div class="why-hire-content">
         <h1>Why Hire Gulf Coast Contracting?</h1>
-        <h3>Choose a local team that builds for Florida conditions, with clear schedules and clean job sites.</h3>
+        <h3>
+            Choose a local team that builds for Florida conditions,
+            with clear schedules and clean job sites.
+        </h3>
     </div>
+
     <div class="why-hire-card-grid">
+
         <div class="why-hire-card">
-            <i class="circle fa-solid fa-id-card"></i>
-            <h3>Licensed & Insured (CGC153xxxx)</h3>
-            <p>Permits, engineering, and inspections handled for you</p>
-        </div>
-        <div class="why-hire-card">
-            <i class="circle fa-solid fa-people-group"></i>
-            <h3>In House Crews</h3>
-            <p>Consistent craftsmanship, predictable timelines, and daily tidy ups</p>
-        </div>
-        <div class="why-hire-card">
-            <i class="circle fa-solid fa-calendar-check"></i>
-            <h3>Clear Communication</h3>
-            <p>You'll always know what's happening, what's next, and when to expect it.</p>
+            <span class="circle">
+                <i class="fa-solid fa-id-card"></i>
+            </span>
+
+            <h3>Licensed &amp; Insured (CGC153xxxx)</h3>
+
+            <p>
+                Permits, engineering, and inspections handled for you.
+            </p>
         </div>
 
         <div class="why-hire-card">
-            <i class="circle fa-solid fa-shield-heart"></i>
+            <span class="circle">
+                <i class="fa-solid fa-people-group"></i>
+            </span>
+
+            <h3>In-House Crews</h3>
+
+            <p>
+                Consistent craftsmanship, predictable timelines,
+                and daily job site cleanups.
+            </p>
+        </div>
+
+        <div class="why-hire-card">
+            <span class="circle">
+                <i class="fa-solid fa-calendar-check"></i>
+            </span>
+
+            <h3>Clear Communication</h3>
+
+            <p>
+                You'll always know what's happening,
+                what's next, and when to expect it.
+            </p>
+        </div>
+
+        <div class="why-hire-card">
+            <span class="circle">
+                <i class="fa-solid fa-shield-heart"></i>
+            </span>
+
             <h3>Built to Last</h3>
-            <p>Quality materials, attention to detail, and craftsmanship designed for Florida living.</p>
+
+            <p>
+                Quality materials, attention to detail,
+                and craftsmanship designed for Florida living.
+            </p>
         </div>
 
     </div>
+
     <div class="why-hire-footer">
 
         <h2>Let's Build Something You'll Be Proud Of.</h2>
 
         <p>
-            Whether you're planning a custom home, home addition, detached garage,
-            or commercial construction project, Gulf Coast Contracting is here to
-            guide you every step of the way. From your first consultation to the
-            final walkthrough, our goal is to deliver quality workmanship, honest
-            communication, and a finished project you can enjoy for years to come.
+            Whether you're planning a custom home, home addition,
+            detached garage, or commercial construction project,
+            Gulf Coast Contracting is here to guide you every step
+            of the way. From your first consultation to the final
+            walkthrough, our goal is to deliver quality workmanship,
+            honest communication, and a finished project you can
+            enjoy for years to come.
         </p>
 
         <p class="why-hire-contact">
@@ -269,8 +307,6 @@ require __DIR__ . '/../partials/Header.php';
         </p>
 
     </div>
-
-
 
 </section>
 

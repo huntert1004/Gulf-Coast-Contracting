@@ -31,43 +31,51 @@
     font-size: var(--text-md);
     font-weight: var(--font-weight-md);
 }
-
 .in-touch-content {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-lg);
+    gap: var(--space-xl);
 }
 
-.in-touch-content i,
-.in-touch-content p {
-    margin: 0;
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-.in-touch-content i {
+.contact-item i {
     width: 6.4rem;
     height: 6.4rem;
-    margin: 0 auto var(--space-sm);
+
+    margin-bottom: var(--space-md);
 
     border-radius: 50%;
-    background: var(--supporting-green-100);
-    color: var(--supporting-green-700);
 
     display: flex;
     justify-content: center;
     align-items: center;
 
+    background: var(--supporting-green-100);
+    color: var(--supporting-green-700);
+
     font-size: var(--text-md);
-    transition: all 0.3s ease;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
 }
 
-.in-touch-content p {
+.contact-item p {
+    margin: 0;
+
     color: var(--brand-main-500);
     font-size: var(--text-sm);
     line-height: 1.6;
 }
 
-.in-touch-content i:hover {
-    transform: translateY(-4px) scale(1.05);
+.contact-item:hover i {
+    transform: translateY(-4px);
     box-shadow: var(--shadow-md);
 }
 
@@ -224,7 +232,7 @@
     max-height: 32rem;
     padding: var(--space-md);
 
-    background: var(--neutral-000);
+    background: var(--neutral-100);
     border-radius: var(--border-radius-md);
     box-shadow: var(--shadow-lg);
     border: 1px solid var(--neutral-300);
