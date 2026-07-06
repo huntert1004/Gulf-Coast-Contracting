@@ -83,6 +83,78 @@ class Quote extends Model
     {
         $this->message = $newmessage;
     }
+    public function getRecentQuotes(int $limit = 5): array
+    {
+        $stmt = $this->db->prepare("
+        SELECT *
+        FROM quotes
+        ORDER BY created_at DESC
+        LIMIT :limit
+    ");
+
+        $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function getQuoteCount(): int
+    {
+        $stmt = $this->db->prepare("
+        SELECT COUNT(*)
+        FROM quotes
+    ");
+
+        $stmt->execute();
+
+        return (int)$stmt->fetchColumn();
+    }
+    public function getWeeklyQuoteCount(): int
+    {
+        $stmt = $this->db->prepare("
+        SELECT COUNT(*)
+        FROM quotes
+        WHERE created_at >= DATE_SUB(NOW(), INTERVAL 7 DAY)
+    ");
+
+        $stmt->execute();
+
+        return (int)$stmt->fetchColumn();
+    }
+    public function getMostRequestedService(): string
+    {
+        $stmt = $this->db->prepare("
+        SELECT services
+        FROM quotes
+    ");
+
+        $stmt->execute();
+
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        $counts = [];
+
+        foreach ($rows as $row) {
+
+            $services = json_decode($row['services'], true) ?? [];
+
+            foreach ($services as $service) {
+
+                if (!isset($counts[$service])) {
+                    $counts[$service] = 0;
+                }
+
+                $counts[$service]++;
+            }
+        }
+
+        if (empty($counts)) {
+            return 'N/A';
+        }
+
+        arsort($counts);
+
+        return array_key_first($counts);
+    }
 
     function save()
     {

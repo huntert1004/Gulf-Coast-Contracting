@@ -63,6 +63,8 @@ $router->post('/quote-submit', [$quoteController, 'submit']);
 
 
 // Admin Dashboard
-$router->get('/dashboard', [$dashboardController, 'dashboard']);
+$router->get('/dashboard', [$dashboardController, 'index']);
+$router->get('/dashboard/contacts', [$dashboardController, 'contact']);
+$router->get('/dashboard/quotes', [$dashboardController, 'quote']);
 
 $router->dispatch($_SERVER['REQUEST_URI'], $_SERVER['REQUEST_METHOD']);

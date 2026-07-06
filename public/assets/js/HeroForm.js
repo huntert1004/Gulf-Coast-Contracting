@@ -1,8 +1,4 @@
-import {
-    isValidName,
-    isValidEmail,
-    isRequired
-} from './Validation.js';
+
 
 
 async function resetButton(button, icon) {

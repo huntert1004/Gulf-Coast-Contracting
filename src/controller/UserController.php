@@ -48,20 +48,20 @@ class UserController
             $username = trim($_POST['username']);
             $password = $_POST['password'];
 
-            $validator = new UserValidator();
+            // $validator = new UserValidator();
 
-            $errors = $validator->validate($_POST);
+            // $errors = $validator->validate($_POST);
 
-            if (!empty($errors)) {
-                http_response_code(400);
+            // if (!empty($errors)) {
+            //     http_response_code(400);
 
-                echo json_encode([
-                    'success' => false,
-                    'errors' => $errors
-                ]);
+            //     echo json_encode([
+            //         'success' => false,
+            //         'errors' => $errors
+            //     ]);
 
-                exit;
-            }
+            //     exit;
+            // }
 
             $userModel = new User();
             $user = $userModel->findByUsername($username);

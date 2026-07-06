@@ -537,3 +537,128 @@
 
 }
 /* --------------------Why Hire End------------------------ */
+
+/* Dashboard Table Start */
+
+/* ==========================================
+   Dashboard Tables
+========================================== */
+
+.dashboard-table-card {
+    margin-top: var(--space-xl);
+    padding: var(--space-xl);
+
+    background: var(--neutral-000);
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.dashboard-table-header {
+    margin-bottom: var(--space-lg);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--space-md);
+}
+
+.dashboard-table-header h2 {
+    margin-bottom: var(--space-xs);
+
+    color: var(--brand-main-500);
+    font-family: var(--font-poppins);
+    font-size: var(--text-lg);
+}
+
+.dashboard-table-header p {
+    color: var(--neutral-600);
+    font-size: var(--text-sm);
+}
+
+.dashboard-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 76rem;
+}
+
+.dashboard-table thead {
+    background: var(--neutral-100);
+}
+
+.dashboard-table th {
+    padding: var(--space-md);
+
+    color: var(--brand-main-500);
+    font-size: var(--text-xs);
+    font-weight: var(--font-weight-lg);
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+
+    border-bottom: 1px solid var(--neutral-200);
+}
+
+.dashboard-table td {
+    padding: var(--space-md);
+
+    color: var(--neutral-700);
+    font-size: var(--text-sm);
+
+    border-bottom: 1px solid var(--neutral-200);
+}
+
+.dashboard-table tbody tr {
+    transition: background .2s ease;
+}
+
+.dashboard-table tbody tr:hover {
+    background: var(--neutral-100);
+}
+
+.table-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: .5rem 1rem;
+    border-radius: 999px;
+
+    font-size: var(--text-xs);
+    font-weight: var(--font-weight-lg);
+}
+
+.table-status.new {
+    background: var(--supporting-green-100);
+    color: var(--supporting-green-700);
+}
+
+.table-status.viewed {
+    background: var(--neutral-200);
+    color: var(--neutral-700);
+}
+
+.table-status.contacted {
+    background: var(--supporting-blue-100);
+    color: var(--supporting-blue-700);
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media (max-width: 650px) {
+    .dashboard-table-card {
+        padding: var(--space-md);
+    }
+
+    .dashboard-table-header {
+        flex-direction: column;
+    }
+}
+/* Dashboard Table End  */

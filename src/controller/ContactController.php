@@ -43,12 +43,21 @@ class ContactController
         $contact->setEmail($email);
         $contact->setWorkType($workType);
 
-        $contact->save();
+        $saved = $contact->save();
+
+        if (!$saved) {
+            http_response_code(500);
+            echo json_encode([
+                'success' => false,
+                'message' => 'Failed to save contact request.'
+            ]);
+            exit;
+        }
 
         http_response_code(200);
         echo json_encode([
             'success' => true,
-            'message' => 'Quote request sent successfully.'
+            'message' => 'Contact request sent successfully.'
         ]);
         exit;
     }
