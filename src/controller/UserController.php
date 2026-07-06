@@ -86,7 +86,7 @@ class UserController
 
                 // Only send the cookie over HTTPS.
                 // This helps prevent the session ID from being exposed over insecure HTTP.
-                'secure' => true,
+                'secure' => false,
 
                 // Prevent JavaScript from reading the session cookie.
                 // This helps reduce damage from XSS attacks because injected JS cannot steal PHPSESSID.
@@ -97,7 +97,9 @@ class UserController
                 'samesite' => 'Lax'
             ]);
 
-            session_start();
+            if (session_status() !== PHP_SESSION_ACTIVE) {
+                session_start();
+            }
 
             // After a successful login, regenerate the session ID.
             // This prevents session fixation attacks, where an attacker tries to force
@@ -128,41 +130,26 @@ class UserController
     }
     public function logout()
     {
-        session_start();
+        if (session_status() !== PHP_SESSION_ACTIVE) {
+            session_start();
+        }
 
-        // Clear all session variables
         $_SESSION = [];
 
-        // Delete the session cookie
         if (ini_get("session.use_cookies")) {
             $params = session_get_cookie_params();
 
             setcookie(
-                // The name of the session cookie (usually PHPSESSID)
                 session_name(),
-
-                // Empty value because we're removing the cookie
                 '',
-
-                // Set expiration time in the past.
-                // Browsers immediately delete cookies that have already expired.
                 time() - 42000,
-
-                // Match the original cookie path
                 $params['path'],
-
-                // Match the original cookie domain
                 $params['domain'] ?? '',
-
-                // Match the original secure flag
                 $params['secure'],
-
-                // Match the original HttpOnly flag
                 $params['httponly']
             );
         }
 
-        // Destroy the session on the server
         session_destroy();
 
         header("Location: /login");

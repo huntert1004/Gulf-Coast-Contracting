@@ -1,10 +1,13 @@
 <?php
 require_once __DIR__ . '/../model/Contact.php';
 require_once __DIR__ . '/../model/Quote.php';
+require_once __DIR__ . '/../middleware/AuthMiddleware.php';
 class DashboardController
 {
+    
     public function index()
     {
+        AuthMiddleware::requireLogin();
         $quoteModel = new Quote();
         $contactModel = new Contact();
 
@@ -24,6 +27,7 @@ class DashboardController
 
     public function quote()
     {
+        AuthMiddleware::requireLogin();
         $quoteModel = new Quote();
 
 
@@ -33,6 +37,7 @@ class DashboardController
     }
     public function contact()
     {
+        AuthMiddleware::requireLogin();
 
         $contactModel = new Contact();
 
