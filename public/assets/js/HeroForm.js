@@ -1,8 +1,4 @@
-import {
-    isValidName,
-    isValidEmail,
-    isRequired
-} from './Validation.js';
+
 
 
 async function resetButton(button, icon) {
@@ -31,20 +27,7 @@ if (form) {
         const email = form.querySelector('#email').value.trim();
         const workType = form.querySelector('#work_type').value.trim();
 
-        if (!isValidName(name)) {
-            alert('Invalid Name');
-            return;
-        }
-
-        if (!isValidEmail(email)) {
-            alert('Invalid Email');
-            return;
-        }
-
-        if (!isRequired(workType)) {
-            alert('Select a Service');
-            return;
-        }
+       
 
         const button = form.querySelector('.quote-submit-btn');
         const icon = button.querySelector('.btn-icon');

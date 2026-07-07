@@ -1,38 +1,70 @@
 <?php
+
+require_once __DIR__ . '/../src/core/Router.php';
+
 require_once __DIR__ . '/../src/controller/HomeController.php';
 require_once __DIR__ . '/../src/controller/UserController.php';
 require_once __DIR__ . '/../src/controller/ContactController.php';
 require_once __DIR__ . '/../src/controller/QuoteController.php';
 require_once __DIR__ . '/../src/controller/DashboardController.php';
+require_once __DIR__ . '/../src/controller/ConstructionController.php';
+require_once __DIR__ . '/../src/controller/HomeImprovementController.php';
+require_once __DIR__ . '/../src/controller/OutdoorLivingController.php';
+require_once __DIR__ . '/../src/controller/SpecialtyController.php';
+require_once __DIR__ . '/../src/controller/RegisterController.php';
 
+$router = new Router();
 
-
-$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-
+// Home Controller Object
 $homeController = new HomeController();
+
+// Auth Controller Object
 $userController = new UserController();
+
+// Database Controller Objects(Contact and Quote)
 $contactController = new ContactController();
 $quoteController = new QuoteController();
+
+// Dashboard Controller Object
 $dashboardController = new DashboardController();
 
-if ($uri === '/') {
-    $homeController->index();
-} elseif ($uri === '/login') {
-    $userController->showLogin();
-} elseif ($uri === '/login-submit') {
-    $userController->auth();
-} elseif ($uri === '/logout') {
-    $userController->logout();
-} elseif ($uri === "/contact-submit") {
-    $contactController->submit();
-} elseif ($uri === '/quote-submit') {
-    $quoteController->submit();
-} 
-elseif ($uri === '/dashboard') {
-    $dashboardController->dashboard();
-} 
+// Service Contoller Objects
+$constructionController = new ConstructionController();
+$homeimpromentController = new HomeImprovementController();
+$outdoorlivingController = new OutdoorLivingController();
+$specialtyController = new SpecialtyController();
+$registerController = new RegisterController();
 
-else {
-    http_response_code(404);
-    echo "404 Not Found";
-}
+/*
+|--------------------------------------------------------------------------
+| Routes
+|--------------------------------------------------------------------------
+*/
+
+$router->get('/', [$homeController, 'index']);
+$router->get('/contact', [$quoteController, 'showForm']);
+
+// Services
+$router->get('/services/construction', [$constructionController, 'construction']);
+$router->get('/services/home-improvement', [$homeimpromentController, 'homeImprovement']);
+$router->get('/services/outdoor-living', [$outdoorlivingController, 'outdoorLiving']);
+$router->get('/services/specialty', [$specialtyController, 'specialty']);
+
+// Auth
+$router->get('/register', [$registerController, 'register']);
+$router->get('/login', [$userController, 'showLogin']);
+$router->post('/login-submit', [$userController, 'auth']);
+$router->post('/register-submit', [$userController, 'createUser']);
+$router->get('/logout', [$userController, 'logout']);
+
+// Forms Quote and Contact Index Hero Form
+$router->post('/contact-submit', [$contactController, 'submit']);
+$router->post('/quote-submit', [$quoteController, 'submit']);
+
+
+// Admin Dashboard
+$router->get('/dashboard', [$dashboardController, 'index']);
+$router->get('/dashboard/contacts', [$dashboardController, 'contact']);
+$router->get('/dashboard/quotes', [$dashboardController, 'quote']);
+
+$router->dispatch($_SERVER['REQUEST_URI'], $_SERVER['REQUEST_METHOD']);

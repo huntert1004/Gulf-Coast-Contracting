@@ -1,0 +1,84 @@
+
+/* --------------------Outdoor Living Start------------------------ */
+.outdoor-living-explained {
+    padding: var(--space-xxl) clamp(2rem, 5vw, 8rem);
+    background: var(--neutral-100);
+}
+
+.explained-wrapper {
+    max-width: 120rem;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: var(--space-xxl);
+}
+
+.explained-image {
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.explained-image img {
+    display: block;
+    width: 100%;
+    height: clamp(32rem, 40vw, 52rem);
+    object-fit: cover;
+}
+
+.explained-content {
+    max-width: 58rem;
+}
+
+.explained-content h2 {
+    margin-bottom: var(--space-md);
+    color: var(--brand-main-500);
+    font-size: clamp(3.2rem, 4vw, var(--text-xxl));
+    line-height: 1.15;
+}
+
+.explained-content p {
+    margin-bottom: var(--space-md);
+    color: var(--neutral-800);
+    line-height: 1.8;
+}
+
+
+@media (max-width: 900px) {
+    .explained-wrapper {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    .explained-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .explained-image img {
+        height: clamp(28rem, 55vw, 42rem);
+    }
+}
+
+
+@media (max-width: 500px) {
+    .outdoor-living-explained {
+        padding: var(--space-xl) var(--space-md);
+    }
+
+    .explained-content h2 {
+        font-size: 3.2rem;
+    }
+
+    .explained-content p {
+        font-size: var(--text-sm);
+    }
+
+    .explained-image img {
+        height: 26rem;
+    }
+}
+
+/* --------------------Outdoor Living End------------------------ */

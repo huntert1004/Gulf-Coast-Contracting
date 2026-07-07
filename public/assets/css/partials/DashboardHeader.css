@@ -1,0 +1,109 @@
+/* ==========================================
+   Dashboard Layout
+========================================== */
+
+.wrapper {
+    display: flex;
+    min-height: 100vh;
+
+    background: var(--neutral-100);
+}
+
+/* ==========================================
+   Sidebar
+========================================== */
+
+.sidebar {
+    width: 26rem;
+    flex-shrink: 0;
+
+    background: var(--brand-main-500);
+    color: var(--neutral-100);
+
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: var(--shadow-lg);
+}
+
+/* ==========================================
+   Header
+========================================== */
+
+.sidebar-header {
+    padding: var(--space-xl);
+
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.sidebar-header a img {
+    width: 18rem;
+    transform: scale(2.0);
+    transform-origin: center;
+}
+
+/* ==========================================
+   Navigation
+========================================== */
+
+.sidebar-nav {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: var(--space-lg);
+    gap: var(--space-xs);
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+
+    padding: 1.4rem 1.6rem;
+
+    color: rgba(255, 255, 255, .85);
+    text-decoration: none;
+
+    border-radius: var(--border-radius-md);
+
+    transition:
+        background .25s ease,
+        color .25s ease,
+        transform .25s ease;
+}
+
+.sidebar-link i {
+    width: 2rem;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.sidebar-link span {
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-md);
+}
+
+/* Hover */
+
+.sidebar-link:hover {
+    background: rgba(255, 255, 255, .08);
+    color: var(--neutral-100);
+
+    transform: translateX(4px);
+}
+
+/* Active */
+
+.sidebar-link.active {
+    background: var(--supporting-green-500);
+    color: white;
+}
+

@@ -1,0 +1,40 @@
+/* ==========================================
+   Quote Services
+========================================== */
+
+.service-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+
+.service-badge {
+    display: inline-flex;
+    align-items: center;
+
+    padding: .45rem .9rem;
+
+    background: var(--supporting-green-100);
+    color: var(--supporting-green-700);
+
+    border-radius: 999px;
+
+    font-size: var(--text-xs);
+    font-weight: var(--font-weight-md);
+
+    white-space: nowrap;
+}
+
+.dashboard-table th:nth-child(3),
+.dashboard-table td:nth-child(3) {
+    min-width: 28rem;
+}
+
+.dashboard-table th:first-child,
+.dashboard-table td:first-child {
+    min-width: 18rem;
+}
+
+.dashboard-table td:nth-child(5) {
+    white-space: nowrap;
+}

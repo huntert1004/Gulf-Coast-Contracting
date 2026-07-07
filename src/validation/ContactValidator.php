@@ -23,9 +23,10 @@ class ContactValidator
         }
 
         $allowedWorkTypes = [
-            'Commercial Roofing Services',
-            'Residential Roofing Services',
-            'Specialized Roofing Services'
+            'construction',
+            'home improvement',
+            'outdoor living',
+            'specialty services'
         ];
 
         if ($workType === '') {

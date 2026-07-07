@@ -392,7 +392,6 @@
 
 .faq-section {
     padding: var(--space-xxl) clamp(2rem, 5vw, 8rem);
-    background: var(--neutral-200);
 }
 
 .faq-section > h3 {
