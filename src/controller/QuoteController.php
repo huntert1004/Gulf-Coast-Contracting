@@ -46,9 +46,23 @@ class QuoteController
             $quote->setServices($_POST['services'] ?? []);
             $quote->setMessage($_POST['message']);
 
-            $quote->save();
+            $saved = $quote->save();
 
-            $success = "Message sent successfully.";
+            // if (!$saved) {
+            //     http_response_code(500);
+            //     echo json_encode([
+            //         'success' => false,
+            //         'message' => 'Failed to save contact request.'
+            //     ]);
+            //     exit;
+            // }
+
+            // http_response_code(200);
+            // echo json_encode([
+            //     'success' => true,
+            //     'message' => 'Contact request sent successfully.'
+            // ]);
+            // exit;
         }
     }
 

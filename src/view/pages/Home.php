@@ -1,7 +1,4 @@
-<?php
-$title = "Home | Gulf Coast Contracting";
-require __DIR__ . '/../partials/Header.php';
-?>
+<?php require __DIR__ . '/../partials/Header.php';?>
 
 
 <section>

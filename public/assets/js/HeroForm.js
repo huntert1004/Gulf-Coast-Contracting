@@ -1,6 +1,3 @@
-
-
-
 async function resetButton(button, icon) {
     await new Promise(resolve => setTimeout(resolve, 2000));
 
@@ -14,9 +11,6 @@ async function resetButton(button, icon) {
 
     button.disabled = false;
 }
-
-
-
 const form = document.querySelector('.hero-form');
 
 if (form) {
