@@ -58,7 +58,7 @@
 
 <!-- Quote Form -->
 <section class="quote-form">
-    <form method="POST" action="/quote-submit">
+    <form class="quote-page-form" method="POST" action="/quote-submit">
         <h2>Get Free Estimate Today</h2>
 
         <div class="user-box">
